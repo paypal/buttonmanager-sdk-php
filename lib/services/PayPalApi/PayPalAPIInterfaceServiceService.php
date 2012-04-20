@@ -123,21 +123,6 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	}
 
 
-	/**
-	 * Service Call: DoCancel
-	 * @param DoCancelReq $doCancelReq
-	 * @return DoCancelResponseType
-	 * @throws APIException
-	 */
-	public function DoCancel($doCancelReq, $apiUsername=null) {
-		$this->setStandardParams($doCancelReq->DoCancelRequest);
-		$ret = new DoCancelResponseType();
-		$resp = $this->call("DoCancel", $doCancelReq, $apiUsername);
-		$ret->init(PPUtils::xmlToArray($resp));
-		return $ret;
-	}
-
-
 }
 
 ?>
