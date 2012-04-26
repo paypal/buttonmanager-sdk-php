@@ -1,3 +1,9 @@
+PayPal Adaptive Accounts PHP SDK - 0.6.87
+----------------------------------------
+Date - 17-Apr-2012
+	- Fix to get SDK working with Permissions API token
+	- wsdl update version 88.0
+
 PayPal ButtonManager PHP SDK - 0.6.86
 ----------------------------------------
 
