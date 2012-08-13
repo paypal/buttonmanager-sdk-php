@@ -6,10 +6,10 @@ require_once('PPLoggingManager.php');
 
 $logger = new PPLoggingManager('Crete Button');
 
-$buttonVar = Array("item_name" => $_REQUEST['itemName'],
-					"return" => $_REQUEST['returnURL'],
-					"business" => $_REQUEST['businessMail'],
-					"amount" => $_REQUEST['amt']);
+$buttonVar = array("item_name=" . $_REQUEST['itemName'],
+					"return=" . $_REQUEST['returnURL'],
+					"business=" . $_REQUEST['businessMail'],
+					"amount=" . $_REQUEST['amt']);
 
 if($_REQUEST['buttonType'] == "PAYMENTPLAN")
 {
@@ -31,29 +31,28 @@ if($_REQUEST['buttonType'] == "PAYMENTPLAN")
 
 elseif($_REQUEST['buttonType'] == "AUTOBILLING")
 {
-	$buttonVar["min_amount"] =  $_REQUEST['minAmt'];
+	$buttonVar[] = "min_amount=" . $_REQUEST['minAmt'];
 }
 elseif($_REQUEST['buttonType'] == "GIFTCERTIFICATE")
 {
-	$buttonVar["shopping_url"] =  $_REQUEST['shoppingUrl'];
+	$buttonVar[] = "shopping_url=" . $_REQUEST['shoppingUrl'];
 }
 
 elseif($_REQUEST['buttonType'] == "PAYMENT")
 {
-	$buttonVar["subtotal"] =  $_REQUEST['subTotal'];
+	$buttonVar[] = "subtotal=" . $_REQUEST['subTotal'];
 }
 
 elseif($_REQUEST['buttonType'] == "SUBSCRIBE")
 {
-	$buttonVar["a3"] =  $_REQUEST['subAmt'];
-	$buttonVar["p3"] =  $_REQUEST['subPeriod'];
-	$buttonVar["t3"] =  $_REQUEST['subInterval'];
+	$buttonVar[] = "a3=" . $_REQUEST['subAmt'];
+	$buttonVar[] = "p3=" . $_REQUEST['subPeriod'];
+	$buttonVar[] = "t3=" . $_REQUEST['subInterval'];
 }
 $createButtonRequest = new BMCreateButtonRequestType();
 $createButtonRequest->ButtonCode = $_REQUEST['buttonCode'];
 $createButtonRequest->ButtonType = $_REQUEST['buttonType'];
-$createButtonRequest->Version = 86.0;
-$createButtonRequest->ButtonVar[0] = $buttonVar;
+$createButtonRequest->ButtonVar = $buttonVar;
 if($_REQUEST['buttonType'] == "PAYMENTPLAN")
 {
 	$createButtonRequest->OptionDetails = $optionDetails;

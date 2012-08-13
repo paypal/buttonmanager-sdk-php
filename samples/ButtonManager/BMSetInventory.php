@@ -12,7 +12,6 @@ $itemTrackingDetails->ItemCost = $_REQUEST['itemCost'];
 
 $BMSetInventoryReqest = new BMSetInventoryRequestType();
 $BMSetInventoryReqest->HostedButtonID = $_REQUEST['hostedID'];
-$BMSetInventoryReqest->Version = 86.0;
 $BMSetInventoryReqest->TrackInv = $_REQUEST['trackInv'];
 $BMSetInventoryReqest->TrackPnl = $_REQUEST['trackPnl'];
 $BMSetInventoryReqest->ItemTrackingDetails = $itemTrackingDetails;

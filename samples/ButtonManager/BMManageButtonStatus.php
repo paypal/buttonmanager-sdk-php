@@ -8,7 +8,6 @@ $logger = new PPLoggingManager('BMManageButtonStatus');
 
 $BMManageButtonStatusReqest = new BMManageButtonStatusRequestType();
 $BMManageButtonStatusReqest->HostedButtonID = $_REQUEST['hostedID'];
-$BMManageButtonStatusReqest->Version = 86.0;
 $BMManageButtonStatusReqest->ButtonStatus = $_REQUEST['buttonStatus'];
 
 $BMManageButtonStatusReq = new BMManageButtonStatusReq();

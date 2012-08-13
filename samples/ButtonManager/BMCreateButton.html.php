@@ -3,11 +3,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>PayPal SDK-BMCreateButton</title>
-<?php 
+<?php
 $serverName = $_SERVER['SERVER_NAME'];
 $serverPort = $_SERVER['SERVER_PORT'];
-$url=dirname('http://'.$serverName.':'.$serverPort.$_SERVER['REQUEST_URI']);
-$returnUrl = $url."BMButtonSearch.html.php";
+$url = dirname('http://'.$serverName.':'.$serverPort.$_SERVER['REQUEST_URI']);
+$returnUrl = $url . "/BMButtonSearch.html.php";
 ?>
 </head>
 <body>
@@ -27,7 +27,7 @@ hosted on PayPal or a non-hosted button</p>
 <div class="param_value">
 <select name="buttonType">
 <option value="AUTOBILLING">AutoBilling</option>
-<option value="BUYNOW">BuyNow</option>
+<option value="BUYNOW" selected="selected">BuyNow</option>
 <option value="CART">Cart</option>
 <option value="DONATE">Donate</option>
 <option value="GIFTCERTIFICATE">Gift Certificate</option>

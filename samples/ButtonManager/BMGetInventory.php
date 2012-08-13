@@ -8,7 +8,6 @@ $logger = new PPLoggingManager('BMGetInventory');
 
 $BMGetInventoryReqest = new BMGetInventoryRequestType();
 $BMGetInventoryReqest->HostedButtonID = $_REQUEST['hostedID'];
-$BMGetInventoryReqest->Version = 86.0;
 
 $BMGetInventoryReq = new BMGetInventoryReq();
 $BMGetInventoryReq->BMGetInventoryRequest = $BMGetInventoryReqest;
