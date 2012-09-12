@@ -14,6 +14,13 @@ $BMGetButtonDetailsReq->BMGetButtonDetailsRequest = $BMGetButtonDetailsReqest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
 $BMGetButtonDetailsResponse = $paypalService->BMGetButtonDetails($BMGetButtonDetailsReq);
+
+echo "<table>";
+echo "<tr><td>Ack :</td><td><div id='Ack'>$BMGetButtonDetailsResponse->Ack</div> </td></tr>";
+echo "<tr><td>HostedButtonID :</td><td><div id='HostedButtonID'>". $BMGetButtonDetailsResponse->HostedButtonID ."</div> </td></tr>";
+echo "<tr><td>Email :</td><td><div id='Email'>". $BMGetButtonDetailsResponse->Email ."</div> </td></tr>";
+echo "</table>";
+
 echo "<pre>";
 print_r($BMGetButtonDetailsResponse);
 echo "</pre>";

@@ -15,6 +15,11 @@ $BMManageButtonStatusReq->BMManageButtonStatusRequest = $BMManageButtonStatusReq
 
 $paypalService = new PayPalAPIInterfaceServiceService();
 $BMManageButtonStatusResponse = $paypalService->BMManageButtonStatus($BMManageButtonStatusReq);
+
+echo "<table>";
+echo "<tr><td>Ack :</td><td><div id='Ack'>$BMManageButtonStatusResponse->Ack</div> </td></tr>";
+echo "</table>";
+
 echo "<pre>";
 print_r($BMManageButtonStatusResponse);
 echo "</pre>";

@@ -14,6 +14,12 @@ $BMGetInventoryReq->BMGetInventoryRequest = $BMGetInventoryReqest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
 $BMGetInventoryResponse = $paypalService->BMGetInventory($BMGetInventoryReq);
+
+echo "<table>";
+echo "<tr><td>Ack :</td><td><div id='Ack'>$BMGetInventoryResponse->Ack</div> </td></tr>";
+echo "<tr><td>HostedButtonID :</td><td><div id='HostedButtonID'>$BMGetInventoryResponse->HostedButtonID</div> </td></tr>";
+echo "</table>";
+
 echo "<pre>";
 print_r($BMGetInventoryResponse);
 echo "</pre>";

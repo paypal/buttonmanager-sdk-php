@@ -21,6 +21,11 @@ $BMSetInventoryReq->BMSetInventoryRequest = $BMSetInventoryReqest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
 $BMSetInventoryResponse = $paypalService->BMSetInventory($BMSetInventoryReq);
+
+echo "<table>";
+echo "<tr><td>Ack :</td><td><div id='Ack'>$BMSetInventoryResponse->Ack</div> </td></tr>";
+echo "</table>";
+
 echo "<pre>";
 print_r($BMSetInventoryResponse);
 echo "</pre>";

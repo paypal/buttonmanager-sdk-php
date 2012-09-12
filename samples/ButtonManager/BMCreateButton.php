@@ -63,6 +63,13 @@ $createButtonReq->BMCreateButtonRequest = $createButtonRequest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
 $createButtonResponse = $paypalService->BMCreateButton($createButtonReq);
+
+echo "<table>";
+echo "<tr><td>Ack :</td><td><div id='Ack'>$createButtonResponse->Ack</div> </td></tr>";
+echo "<tr><td>HostedButtonID :</td><td><div id='HostedButtonID'>". $createButtonResponse->HostedButtonID ."</div> </td></tr>";
+echo "<tr><td>Email :</td><td><div id='Email'>". $createButtonResponse->Email ."</div> </td></tr>";
+echo "</table>";
+		
 echo "<pre>";
 print_r($createButtonResponse);
 echo "</pre>";

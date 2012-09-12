@@ -15,6 +15,11 @@ $buttonSearchReq->BMButtonSearchRequest = $buttonSearchRequest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
 $buttonSearchResponse = $paypalService->BMButtonSearch($buttonSearchReq);
+
+echo "<table>";
+echo "<tr><td>Ack :</td><td><div id='Ack'>$buttonSearchResponse->Ack</div> </td></tr>";
+echo "</table>";
+
 echo "<pre>";
 	print_r($buttonSearchResponse);
 echo "</pre>";
