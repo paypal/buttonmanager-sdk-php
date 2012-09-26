@@ -2,18 +2,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>PayPal SDK</title>
+<title>PayPal ButtonManager SDK</title>
+<link rel="stylesheet" href="Common/sdk.css"/>
 </head>
 <body>
 	<center>
-		<font size=2 color=black face=Verdana><b><u>PayPal Samples</u> </b> </font>
+		<font size=2 color=black face=Verdana><b><u>PayPal ButtonManager SDK - Samples</u> </b> </font>
 	</center>
 	<table>
 		<tr>
 			<td valign="top">		
-			<tr>
-				<th>Button Manager</th>
-			</tr>
 			<tr>
 				<td><a href="ButtonManager/BMCreateButton.html.php">BMCreateButton</a></td>
 				<td></td>

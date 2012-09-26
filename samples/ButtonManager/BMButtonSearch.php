@@ -14,8 +14,12 @@ $buttonSearchReq = new BMButtonSearchReq();
 $buttonSearchReq->BMButtonSearchRequest = $buttonSearchRequest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
-$buttonSearchResponse = $paypalService->BMButtonSearch($buttonSearchReq);
-
+try {
+	$buttonSearchResponse = $paypalService->BMButtonSearch($buttonSearchReq);
+} catch (Exception $ex) {
+	require '../Error.php';
+	exit;
+}
 echo "<table>";
 echo "<tr><td>Ack :</td><td><div id='Ack'>$buttonSearchResponse->Ack</div> </td></tr>";
 echo "</table>";

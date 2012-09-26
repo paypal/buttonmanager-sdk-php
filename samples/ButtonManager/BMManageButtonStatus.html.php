@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>PayPal SDK - BMManageButtonStatus</title>
-
+<title>PayPal ButtonManager SDK - BMManageButtonStatus</title>
+<link rel="stylesheet" href="../Common/sdk.css"/>
 </head>
 <body>
 <div id="wrapper">
@@ -17,7 +17,7 @@ status of a hosted button. Currently, you can only delete a button</p>
 <form method="POST" action = "BMManageButtonStatus.php">
 <div id="request_form">
 <div class="params">
-<div class="param_name">HostedID*(Get hosted ID via <a href="BMCreateButton.html.php">BMCreateButton</a>)</div>
+<div class="param_name">HostedID* (Get hosted ID via <a href="BMCreateButton.html.php">BMCreateButton</a>)</div>
 <div class="param_value">
 <input type="text" name="hostedID" value="" size="50"
 maxlength="260" />

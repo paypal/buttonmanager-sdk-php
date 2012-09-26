@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>PayPal SDK - BMGetButtonDetails</title>
-
+<title>PayPal ButtonManager SDK - BMGetButtonDetails</title>
+<link rel="stylesheet" href="../Common/sdk.css"/>
 </head>
 <body>
 <div id="wrapper">
@@ -18,7 +18,7 @@ information about a hosted Website Payments Standard button.</p>
 <div id="request_form">
 <div class="params">
 <div class="param_name">
-HostedID*(Get hosted ID via <a href="BMCreateButton.html.php">BMCreateButton</a>)
+HostedID* (Get hosted ID via <a href="BMCreateButton.html.php">BMCreateButton</a>)
 </div>
 <div class="param_value">
 <input type="text" name="hostedID" value="" size="50"

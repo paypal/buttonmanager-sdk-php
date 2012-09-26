@@ -10,23 +10,24 @@ $itemTrackingDetails = new ItemTrackingDetailsType();
 $itemTrackingDetails->ItemQty = $_REQUEST['itemQty'];
 $itemTrackingDetails->ItemCost = $_REQUEST['itemCost'];
 
-$BMSetInventoryReqest = new BMSetInventoryRequestType();
-$BMSetInventoryReqest->HostedButtonID = $_REQUEST['hostedID'];
-$BMSetInventoryReqest->TrackInv = $_REQUEST['trackInv'];
-$BMSetInventoryReqest->TrackPnl = $_REQUEST['trackPnl'];
-$BMSetInventoryReqest->ItemTrackingDetails = $itemTrackingDetails;
+$bmSetInventoryReqest = new BMSetInventoryRequestType($_REQUEST['hostedID'], $_REQUEST['trackInv'], $_REQUEST['trackPnl']);
+$bmSetInventoryReqest->ItemTrackingDetails = $itemTrackingDetails;
 
-$BMSetInventoryReq = new BMSetInventoryReq();
-$BMSetInventoryReq->BMSetInventoryRequest = $BMSetInventoryReqest;
+$bmSetInventoryReq = new BMSetInventoryReq();
+$bmSetInventoryReq->BMSetInventoryRequest = $bmSetInventoryReqest;
 
-$paypalService = new PayPalAPIInterfaceServiceService();
-$BMSetInventoryResponse = $paypalService->BMSetInventory($BMSetInventoryReq);
-
+$paypalService = new PayPalAPIInterfaceServiceService(); 
+try {
+	$bmSetInventoryResponse = $paypalService->BMSetInventory($bmSetInventoryReq);
+} catch (Exception $ex) {
+	require '../Error.php';
+	exit;
+}
 echo "<table>";
-echo "<tr><td>Ack :</td><td><div id='Ack'>$BMSetInventoryResponse->Ack</div> </td></tr>";
+echo "<tr><td>Ack :</td><td><div id='Ack'>$bmSetInventoryResponse->Ack</div> </td></tr>";
 echo "</table>";
 
 echo "<pre>";
-print_r($BMSetInventoryResponse);
+print_r($bmSetInventoryResponse);
 echo "</pre>";
 require_once '../Response.php';

@@ -2,16 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>PayPal SDK - BMUpdateButton</title>
-<%
-StringBuilder url = new StringBuilder();
-url.append("http://");
-url.append(request.getServerName());
-url.append(":");
-url.append(request.getServerPort());
-url.append(request.getContextPath());
-String returnURL = url.toString() + "/index.html";
-%>
+<title>PayPal ButtonManager SDK - BMUpdateButton</title>
+<link rel="stylesheet" href="../Common/sdk.css"/>
 </head>
 <body>
 <div id="wrapper">

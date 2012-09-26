@@ -6,21 +6,26 @@ require_once('PPLoggingManager.php');
 
 $logger = new PPLoggingManager('BMManageButtonStatus');
 
-$BMManageButtonStatusReqest = new BMManageButtonStatusRequestType();
-$BMManageButtonStatusReqest->HostedButtonID = $_REQUEST['hostedID'];
-$BMManageButtonStatusReqest->ButtonStatus = $_REQUEST['buttonStatus'];
+$bmManageButtonStatusReqest = new BMManageButtonStatusRequestType();
+$bmManageButtonStatusReqest->HostedButtonID = $_REQUEST['hostedID'];
+$bmManageButtonStatusReqest->ButtonStatus = $_REQUEST['buttonStatus'];
 
 $BMManageButtonStatusReq = new BMManageButtonStatusReq();
-$BMManageButtonStatusReq->BMManageButtonStatusRequest = $BMManageButtonStatusReqest;
+$BMManageButtonStatusReq->BMManageButtonStatusRequest = $bmManageButtonStatusReqest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
-$BMManageButtonStatusResponse = $paypalService->BMManageButtonStatus($BMManageButtonStatusReq);
+try {
+	$bmManageButtonStatusResponse = $paypalService->BMManageButtonStatus($BMManageButtonStatusReq);
+} catch (Exception $ex) {
+	require '../Error.php';
+	exit;
+}
 
 echo "<table>";
-echo "<tr><td>Ack :</td><td><div id='Ack'>$BMManageButtonStatusResponse->Ack</div> </td></tr>";
+echo "<tr><td>Ack :</td><td><div id='Ack'>$bmManageButtonStatusResponse->Ack</div> </td></tr>";
 echo "</table>";
 
 echo "<pre>";
-print_r($BMManageButtonStatusResponse);
+print_r($bmManageButtonStatusResponse);
 echo "</pre>";
 require_once '../Response.php';
