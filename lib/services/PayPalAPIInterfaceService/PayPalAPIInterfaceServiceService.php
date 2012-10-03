@@ -10,7 +10,7 @@ require_once('PPUtils.php');
 class PayPalAPIInterfaceServiceService extends PPBaseService {
 
 	// Service Version
-	private static $SERVICE_VERSION = "93.0";
+	private static $SERVICE_VERSION = "94.0";
 
 	// Service Name
 	private static $SERVICE_NAME = "PayPalAPIInterfaceService";
@@ -20,7 +20,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	}
 
 	private function setStandardParams(AbstractRequestType $request) {
-		if ($request->Version == null) {
+		if ($request->Version == NULL) {
 			$request->Version = self::$SERVICE_VERSION;
 		}
 	}
@@ -31,7 +31,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return BMCreateButtonResponseType
 	 * @throws APIException
 	 */
-	public function BMCreateButton($bMCreateButtonReq, $apiUsername = null) {
+	public function BMCreateButton($bMCreateButtonReq, $apiUsername = NULL) {
 		$this->setStandardParams($bMCreateButtonReq->BMCreateButtonRequest);
 		$ret = new BMCreateButtonResponseType();
 		$resp = $this->call("BMCreateButton", $bMCreateButtonReq, $apiUsername);
@@ -46,7 +46,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return BMUpdateButtonResponseType
 	 * @throws APIException
 	 */
-	public function BMUpdateButton($bMUpdateButtonReq, $apiUsername = null) {
+	public function BMUpdateButton($bMUpdateButtonReq, $apiUsername = NULL) {
 		$this->setStandardParams($bMUpdateButtonReq->BMUpdateButtonRequest);
 		$ret = new BMUpdateButtonResponseType();
 		$resp = $this->call("BMUpdateButton", $bMUpdateButtonReq, $apiUsername);
@@ -61,7 +61,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return BMManageButtonStatusResponseType
 	 * @throws APIException
 	 */
-	public function BMManageButtonStatus($bMManageButtonStatusReq, $apiUsername = null) {
+	public function BMManageButtonStatus($bMManageButtonStatusReq, $apiUsername = NULL) {
 		$this->setStandardParams($bMManageButtonStatusReq->BMManageButtonStatusRequest);
 		$ret = new BMManageButtonStatusResponseType();
 		$resp = $this->call("BMManageButtonStatus", $bMManageButtonStatusReq, $apiUsername);
@@ -76,7 +76,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return BMGetButtonDetailsResponseType
 	 * @throws APIException
 	 */
-	public function BMGetButtonDetails($bMGetButtonDetailsReq, $apiUsername = null) {
+	public function BMGetButtonDetails($bMGetButtonDetailsReq, $apiUsername = NULL) {
 		$this->setStandardParams($bMGetButtonDetailsReq->BMGetButtonDetailsRequest);
 		$ret = new BMGetButtonDetailsResponseType();
 		$resp = $this->call("BMGetButtonDetails", $bMGetButtonDetailsReq, $apiUsername);
@@ -91,7 +91,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return BMSetInventoryResponseType
 	 * @throws APIException
 	 */
-	public function BMSetInventory($bMSetInventoryReq, $apiUsername = null) {
+	public function BMSetInventory($bMSetInventoryReq, $apiUsername = NULL) {
 		$this->setStandardParams($bMSetInventoryReq->BMSetInventoryRequest);
 		$ret = new BMSetInventoryResponseType();
 		$resp = $this->call("BMSetInventory", $bMSetInventoryReq, $apiUsername);
@@ -106,7 +106,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return BMGetInventoryResponseType
 	 * @throws APIException
 	 */
-	public function BMGetInventory($bMGetInventoryReq, $apiUsername = null) {
+	public function BMGetInventory($bMGetInventoryReq, $apiUsername = NULL) {
 		$this->setStandardParams($bMGetInventoryReq->BMGetInventoryRequest);
 		$ret = new BMGetInventoryResponseType();
 		$resp = $this->call("BMGetInventory", $bMGetInventoryReq, $apiUsername);
@@ -121,7 +121,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return BMButtonSearchResponseType
 	 * @throws APIException
 	 */
-	public function BMButtonSearch($bMButtonSearchReq, $apiUsername = null) {
+	public function BMButtonSearch($bMButtonSearchReq, $apiUsername = NULL) {
 		$this->setStandardParams($bMButtonSearchReq->BMButtonSearchRequest);
 		$ret = new BMButtonSearchResponseType();
 		$resp = $this->call("BMButtonSearch", $bMButtonSearchReq, $apiUsername);
