@@ -4,7 +4,7 @@ class PPUtils
 
 	const SDK_VERSION = "2.0.95";
 
-	const SDK_NAME = "buttonmanager-php-sdk";
+	const SDK_NAME = "merchant-php-sdk";
 
 
 
