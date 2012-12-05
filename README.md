@@ -2,17 +2,6 @@
 PayPal PHP ButtonManager SDK
 ===============================
 
-
-This is a "Work in progress" SDK. If you are looking for a ButtonManager SDK, please see 
-
-https://www.x.com/developers/paypal/documentation-tools/paypal-sdk-index#buttonmanagernew
-
-  OR 
-
-https://github.com/paypal/SDKs/tree/master/ButtonManager/buttonmanager-php-sdk
-
-
-
 Prerequisites
 -------------
 
