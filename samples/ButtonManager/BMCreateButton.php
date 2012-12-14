@@ -35,6 +35,10 @@ if($_REQUEST['buttonType'] == "PAYMENTPLAN") {
 	$buttonVar[] = "p3=" . $_REQUEST['subPeriod'];
 	$buttonVar[] = "t3=" . $_REQUEST['subInterval'];
 }
+if(isset($_REQUEST['notifyURL']))
+{
+	$buttonVar[] = "notify_url=" . $_REQUEST['notifyURL'];
+}
 
 $createButtonRequest = new BMCreateButtonRequestType();
 $createButtonRequest->ButtonCode = $_REQUEST['buttonCode'];

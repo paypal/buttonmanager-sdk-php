@@ -64,6 +64,13 @@ $returnUrl = $url . "/BMButtonSearch.html.php";
 					</div>
 				</div>
 				<div class="params">
+					<div class="param_name">Notification URL</div>
+					<div class="param_value">
+						<input type="text" name="notifyURL"
+							value="" size="50" maxlength="260" />
+					</div>
+				</div>
+				<div class="params">
 					<div class="param_name">Item Name</div>
 					<div class="param_value">
 						<input type="text" name="itemName" value="Widget" size="50"
