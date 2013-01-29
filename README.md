@@ -11,23 +11,21 @@ PayPal's PHP ButtonManager SDK requires
  
 Installing the SDK
 -------------------
-   if using composer 
+   if not using composer 
    
-   Run from commandline and after the installation set the path to config file in PPBootStrap.php, config file is in vendor/paypal/buttonmanager-sdk-php/config/
+   run installation script from buttonmanager-sdk-php/samples directory
    
     curl  https://raw.github.com/paypal/buttonmanager-sdk-php/composer/samples/install.php | php
-     
-   or run this command from buttonmanager-sdk-php/samples directory and after the installation set the path to config file in PPBootStrap.php, config file is in vendor/paypal/buttonmanager-sdk-php/config/
     
+        or 
+        
+    php install.php
+    
+   if using composer
+   
+   Run from buttonmanager-sdk-php/samples directory and after the installation set the path to config file in PPBootStrap.php, config file is in vendor/paypal/buttonmanager-sdk-php/config/
+   
     composer update
-   
-   if not using composer
-   
-    curl  https://raw.github.com/paypal/buttonmanager-sdk-php/composer/samples/install.php | php
-    
-   or run this command from buttonmanager-sdk-php/samples directory
-   
-    php install.php 
 
 Using the SDK
 -------------
