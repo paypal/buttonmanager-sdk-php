@@ -1,6 +1,4 @@
 <?php 
-require_once 'PPBaseService.php';
-require_once 'PayPalAPIInterfaceService.php';
 
 /**
  * AUTO GENERATED code for PayPalAPIInterfaceService
@@ -14,13 +12,15 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	private static $SERVICE_NAME = "PayPalAPIInterfaceService";
 
     // SDK Name
-	protected static $SDK_NAME = "buttonmanager-php-sdk";
+	protected static $SDK_NAME = "sdkname";
 	
 	// SDK Version
-	protected static $SDK_VERSION = "2.1.96";
+	protected static $SDK_VERSION = "sdkversion";
 
 	public function __construct() {
 		parent::__construct(self::$SERVICE_NAME, 'SOAP', array('PPMerchantServiceHandler'));
+        parent::$SDK_NAME    = self::$SDK_NAME ;
+        parent::$SDK_VERSION = self::$SDK_VERSION;
 	}
 
 	private function setStandardParams(AbstractRequestType $request) {
