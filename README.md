@@ -8,17 +8,34 @@ Prerequisites
 PayPal's PHP ButtonManager SDK requires 
 
    * PHP 5.2 and above with curl/openssl extensions enabled
-  
+ 
+Installing the SDK
+-------------------
+   if not using composer 
+   
+   run installation script from buttonmanager-sdk-php/samples directory
+   
+    curl  https://raw.github.com/paypal/buttonmanager-sdk-php/composer/samples/install.php | php
+    
+        or 
+        
+    php install.php
+    
+   if using composer
+   
+   Run from buttonmanager-sdk-php/samples directory and after the installation set the path to config file in PPBootStrap.php, config file is in vendor/paypal/buttonmanager-sdk-php/config/
+   
+    composer update
 
 Using the SDK
 -------------
 
 To use the SDK, 
 
-   * Copy the config and lib folders into your project. Modify the config file sdk_config.ini to suit your needs.
-   * Make sure that the lib folder in your project is available in PHP's include path
-   * Include the services\PayPalAPIInterfaceService\PayPalAPIInterfaceServiceService.php 
-     file in your code.
+   * Update the sdk_config.ini with your API credentials.
+   * Require "PPBootStrap.php" in your application. [copy it from vendor/paypal/buttonmanager-sdk-php/sample/ if using composer]
+   * To run samples : copy samples in [vendor/paypal/buttonmanager-sdk-php/] to root directory and run in browser
+   * To build your own application:
    * Instantiate a service wrapper object.
    * Instantiate a request object as per your project's needs. All the API request and response 
      classes are available in services\PayPalAPIInterfaceService\PayPalAPIInterfaceServiceService.php
@@ -27,7 +44,8 @@ To use the SDK,
 
 For example,
 
-	require_once('services/PayPalAPIInterfaceService/PayPalAPIInterfaceServiceService.php');	require_once('PPLoggingManager.php');
+	 //sets config file path and loads all the classes
+    require("PPBootStrap.php");
 
 	$buttonSearchReq = new BMButtonSearchReq();
 	$buttonSearchReq->BMButtonSearchRequest = new BMButtonSearchRequestType();
@@ -72,7 +90,7 @@ Please refer to the sample config file provided with this bundle.
 
 Using multiple SDKs together
 ----------------------------
-*copy the contents in 'lib/service/' to one of the SDKs
+*add the required sdk names to 'required' section of composer.json
 *add the service endpoint to 'config/sdk_config.ini', for the endpoints refer the list below
 
 Endpoint Configuration

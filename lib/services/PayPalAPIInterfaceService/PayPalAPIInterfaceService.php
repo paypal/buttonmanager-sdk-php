@@ -4,8 +4,6 @@
   * Auto generated code 
   * 
   */
-require_once 'PPUtils.php';
-require_once 'PPXmlMessage.php';
 /**
  * @hasAttribute
  * On requests, you must set the currencyID attribute to one of
@@ -15,7 +13,6 @@ require_once 'PPXmlMessage.php';
  * be a period (.), and the thousands separator must be a comma
  * (,).
  */
- 
 class BasicAmountType  
    extends PPXmlMessage{
 
@@ -63,7 +60,6 @@ class BasicAmountType
  * @hasAttribute
  * 
  */
- 
 class MeasureType  
    extends PPXmlMessage{
 
@@ -108,9 +104,9 @@ class MeasureType
 
 
 /**
+ * @hasAttribute
  * Value of the application-specific error parameter.  
  */
- 
 class ErrorParameterType  
    extends PPXmlMessage{
 
@@ -125,6 +121,19 @@ class ErrorParameterType
 	 */ 
 	public $Value;
 
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
+	 * @attribute 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $ParamID;
+
 
 }
 
@@ -135,7 +144,6 @@ class ErrorParameterType
  * debugging a response message. These codes will need to be
  * uniquely defined for each application. 
  */
- 
 class ErrorType  
    extends PPXmlMessage{
 
@@ -213,7 +221,6 @@ class ErrorType
  * type of payload content with optional versioning information
  * and detail level requirements. 
  */
- 
 class AbstractRequestType  
    extends PPXmlMessage{
 
@@ -269,7 +276,6 @@ class AbstractRequestType
  * level acknowledgement, and - application-level errors and
  * warnings. 
  */
- 
 class AbstractResponseType  
    extends PPXmlMessage{
 
@@ -353,7 +359,6 @@ class AbstractResponseType
 /**
  * Country code associated with this phone number. 
  */
- 
 class PhoneNumberType  
    extends PPXmlMessage{
 
@@ -400,7 +405,6 @@ class PhoneNumberType
  * Person's name associated with this address. Character length
  * and limitations: 32 single-byte alphanumeric characters 
  */
- 
 class AddressType  
    extends PPXmlMessage{
 
@@ -642,6 +646,18 @@ class AddressType
 	 */ 
 	public $AddressStatus;
 
+	/**
+	 * Returns Normalization Status of the Address. Possible values
+	 * are Normalized, Unnormalized, and None. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $AddressNormalizationStatus;
+
 
    
 }
@@ -651,7 +667,6 @@ class AddressType
 /**
  * 
  */
- 
 class PersonNameType  
    extends PPXmlMessage{
 
@@ -719,7 +734,6 @@ class PersonNameType
 /**
  * 
  */
- 
 class IncentiveAppliedToType  
    extends PPXmlMessage{
 
@@ -775,7 +789,6 @@ class IncentiveAppliedToType
 /**
  * 
  */
- 
 class IncentiveDetailType  
    extends PPXmlMessage{
 
@@ -876,7 +889,6 @@ class IncentiveDetailType
 /**
  * 
  */
- 
 class IncentiveItemType  
    extends PPXmlMessage{
 
@@ -944,7 +956,6 @@ class IncentiveItemType
 /**
  * 
  */
- 
 class IncentiveBucketType  
    extends PPXmlMessage{
 
@@ -1057,7 +1068,6 @@ class IncentiveBucketType
 /**
  * 
  */
- 
 class IncentiveRequestDetailsType  
    extends PPXmlMessage{
 
@@ -1103,7 +1113,6 @@ class IncentiveRequestDetailsType
 /**
  * 
  */
- 
 class GetIncentiveEvaluationRequestDetailsType  
    extends PPXmlMessage{
 
@@ -1185,7 +1194,6 @@ class GetIncentiveEvaluationRequestDetailsType
 /**
  * 
  */
- 
 class GetIncentiveEvaluationResponseDetailsType  
    extends PPXmlMessage{
 
@@ -1228,7 +1236,6 @@ class GetIncentiveEvaluationResponseDetailsType
  * be a period (.), and the thousands separator must be a comma
  * (,). 
  */
- 
 class SetExpressCheckoutRequestDetailsType  
    extends PPXmlMessage{
 
@@ -2147,7 +2154,6 @@ class SetExpressCheckoutRequestDetailsType
  * want the customer to edit his shipping address on PayPal.
  * Character length and limitations: 20 single-byte characters 
  */
- 
 class ExecuteCheckoutOperationsRequestDetailsType  
    extends PPXmlMessage{
 
@@ -2209,7 +2215,6 @@ class ExecuteCheckoutOperationsRequestDetailsType
 /**
  * Details about Billing Agreements requested to be created. 
  */
- 
 class SetDataRequestType  
    extends PPXmlMessage{
 
@@ -2259,7 +2264,6 @@ class SetDataRequestType
 /**
  * 
  */
- 
 class AuthorizationRequestType  
    extends PPXmlMessage{
 
@@ -2291,7 +2295,6 @@ class AuthorizationRequestType
  * The Type of Approval requested - Billing Agreement or
  * Profile 
  */
- 
 class BillingApprovalDetailsType  
    extends PPXmlMessage{
 
@@ -2371,7 +2374,6 @@ class BillingApprovalDetailsType
  * GetExpressCheckoutDetails response, this parameter should be
  * set to yes here 
  */
- 
 class InfoSharingDirectivesType  
    extends PPXmlMessage{
 
@@ -2397,7 +2399,6 @@ class InfoSharingDirectivesType
 /**
  * Description of the Order. 
  */
- 
 class OrderDetailsType  
    extends PPXmlMessage{
 
@@ -2433,7 +2434,6 @@ class OrderDetailsType
 /**
  * Type of the Payment is it Instant or Echeck or Any. 
  */
- 
 class PaymentDirectivesType  
    extends PPXmlMessage{
 
@@ -2459,7 +2459,6 @@ class PaymentDirectivesType
  * used for auto authorization. Mandatory if Authorization is
  * requested. 
  */
- 
 class BuyerDetailType  
    extends PPXmlMessage{
 
@@ -2485,7 +2484,6 @@ class BuyerDetailType
 /**
  * Mobile specific buyer identification. 
  */
- 
 class IdentificationInfoType  
    extends PPXmlMessage{
 
@@ -2531,7 +2529,6 @@ class IdentificationInfoType
 /**
  * The Session token returned during buyer authentication. 
  */
- 
 class MobileIDInfoType  
    extends PPXmlMessage{
 
@@ -2561,7 +2558,6 @@ class MobileIDInfoType
  * If present, requests that the web flow attempt bypass of
  * login. 
  */
- 
 class RememberMeIDInfoType  
    extends PPXmlMessage{
 
@@ -2591,7 +2587,6 @@ class RememberMeIDInfoType
 /**
  * Identity Access token from merchant 
  */
- 
 class IdentityTokenInfoType  
    extends PPXmlMessage{
 
@@ -2625,7 +2620,6 @@ class IdentityTokenInfoType
  * Optional Character length and limitations: One single-byte
  * numeric character. 
  */
- 
 class FundingSourceDetailsType  
    extends PPXmlMessage{
 
@@ -2666,7 +2660,6 @@ class FundingSourceDetailsType
 /**
  * 
  */
- 
 class BillingAgreementDetailsType  
    extends PPXmlMessage{
 
@@ -2733,7 +2726,6 @@ class BillingAgreementDetailsType
  * GetExpressCheckoutDetailsRequest. Character length and
  * limitations: 20 single-byte characters 
  */
- 
 class GetExpressCheckoutDetailsResponseDetailsType  
    extends PPXmlMessage{
 
@@ -3038,7 +3030,6 @@ class GetExpressCheckoutDetailsResponseDetailsType
 /**
  * 
  */
- 
 class ExecuteCheckoutOperationsResponseDetailsType  
    extends PPXmlMessage{
 
@@ -3073,7 +3064,6 @@ class ExecuteCheckoutOperationsResponseDetailsType
  * If Checkout session was initialized successfully, the
  * corresponding token is returned in this element. 
  */
- 
 class SetDataResponseType  
    extends PPXmlMessage{
 
@@ -3110,7 +3100,6 @@ class SetDataResponseType
  * Status will denote whether Auto authorization was successful
  * or not. 
  */
- 
 class AuthorizationResponseType  
    extends PPXmlMessage{
 
@@ -3156,7 +3145,6 @@ class AuthorizationResponseType
  * API, DoExpressCheckoutPaymentRequest. Character length and
  * limit: Up to 13 single-byte alphabetic characters 
  */
- 
 class DoExpressCheckoutPaymentRequestDetailsType  
    extends PPXmlMessage{
 
@@ -3418,7 +3406,6 @@ class DoExpressCheckoutPaymentRequestDetailsType
  * GetExpressCheckoutDetailsRequest. Character length and
  * limitations:20 single-byte characters 
  */
- 
 class DoExpressCheckoutPaymentResponseDetailsType  
    extends PPXmlMessage{
 
@@ -3527,7 +3514,6 @@ class DoExpressCheckoutPaymentResponseDetailsType
  * request. Character length and limits: 19 single-byte
  * characters maximum 
  */
- 
 class DoCaptureResponseDetailsType  
    extends PPXmlMessage{
 
@@ -3580,7 +3566,6 @@ class DoCaptureResponseDetailsType
  * Payment. Character length and limit: Up to 13 single-byte
  * alphabetic characters 
  */
- 
 class DoDirectPaymentRequestDetailsType  
    extends PPXmlMessage{
 
@@ -3672,7 +3657,6 @@ class DoDirectPaymentRequestDetailsType
 /**
  * Type of the payment Required 
  */
- 
 class CreateMobilePaymentRequestDetailsType  
    extends PPXmlMessage{
 
@@ -3863,7 +3847,6 @@ class CreateMobilePaymentRequestDetailsType
 /**
  * Phone number for status inquiry 
  */
- 
 class GetMobileStatusRequestDetailsType  
    extends PPXmlMessage{
 
@@ -3889,7 +3872,6 @@ class GetMobileStatusRequestDetailsType
  * choosing to login with PayPal. Required Character length and
  * limitations: no limit. 
  */
- 
 class SetAuthFlowParamRequestDetailsType  
    extends PPXmlMessage{
 
@@ -4159,7 +4141,6 @@ class SetAuthFlowParamRequestDetailsType
  * The first name of the User. Character length and
  * limitations: 127 single-byte alphanumeric characters 
  */
- 
 class GetAuthDetailsResponseDetailsType  
    extends PPXmlMessage{
 
@@ -4222,7 +4203,6 @@ class GetAuthDetailsResponseDetailsType
  * choosing to login with PayPal. Required Character length and
  * limitations: no limit. 
  */
- 
 class SetAccessPermissionsRequestDetailsType  
    extends PPXmlMessage{
 
@@ -4464,7 +4444,6 @@ class SetAccessPermissionsRequestDetailsType
  * The first name of the User. Character length and
  * limitations: 127 single-byte alphanumeric characters 
  */
- 
 class GetAccessPermissionDetailsResponseDetailsType  
    extends PPXmlMessage{
 
@@ -4549,7 +4528,6 @@ class GetAccessPermissionDetailsResponseDetailsType
 /**
  * 
  */
- 
 class BAUpdateResponseDetailsType  
    extends PPXmlMessage{
 
@@ -4642,7 +4620,6 @@ class BAUpdateResponseDetailsType
  * MerchantPullPaymentResponseType Response data from the
  * merchant pull. 
  */
- 
 class MerchantPullPaymentResponseType  
    extends PPXmlMessage{
 
@@ -4687,7 +4664,6 @@ class MerchantPullPaymentResponseType
 /**
  * MerchantPullInfoType Information about the merchant pull. 
  */
- 
 class MerchantPullInfoType  
    extends PPXmlMessage{
 
@@ -4780,7 +4756,6 @@ class MerchantPullInfoType
  * PaymentTransactionSearchResultType Results from a
  * PaymentTransaction search 
  */
- 
 class PaymentTransactionSearchResultType  
    extends PPXmlMessage{
 
@@ -4905,7 +4880,6 @@ class PaymentTransactionSearchResultType
  * MerchantPullPayment Parameters to make initiate a pull
  * payment 
  */
- 
 class MerchantPullPaymentType  
    extends PPXmlMessage{
 
@@ -5088,7 +5062,6 @@ class MerchantPullPaymentType
  * PaymentTransactionType Information about a PayPal payment
  * from the seller side 
  */
- 
 class PaymentTransactionType  
    extends PPXmlMessage{
 
@@ -5268,7 +5241,6 @@ class PaymentTransactionType
 /**
  * ReceiverInfoType Receiver information. 
  */
- 
 class ReceiverInfoType  
    extends PPXmlMessage{
 
@@ -5323,7 +5295,6 @@ class ReceiverInfoType
 /**
  * PayerInfoType Payer information 
  */
- 
 class PayerInfoType  
    extends PPXmlMessage{
 
@@ -5452,7 +5423,6 @@ class PayerInfoType
 /**
  * InstrumentDetailsType Promotional Instrument Information. 
  */
- 
 class InstrumentDetailsType  
    extends PPXmlMessage{
 
@@ -5476,7 +5446,6 @@ class InstrumentDetailsType
 /**
  * BMLOfferInfoType Specific information for BML. 
  */
- 
 class BMLOfferInfoType  
    extends PPXmlMessage{
 
@@ -5500,7 +5469,6 @@ class BMLOfferInfoType
 /**
  * OfferDetailsType Specific information for an offer. 
  */
- 
 class OfferDetailsType  
    extends PPXmlMessage{
 
@@ -5536,7 +5504,6 @@ class OfferDetailsType
 /**
  * PaymentInfoType Payment information. 
  */
- 
 class PaymentInfoType  
    extends PPXmlMessage{
 
@@ -5785,8 +5752,11 @@ class PaymentInfoType
 	 * reached the monthly limit for transactions on your account.
 	 * verify: The payment is pending because you are not yet
 	 * verified. You must verify your account before you can accept
-	 * this payment. other: The payment is pending for a reason
-	 * other than those listed above. For more information, contact
+	 * this payment. regulatory-review: This payment is pending
+	 * while we make sure it meets regulatory requirements. We'll
+	 * contact you again in 24-72 hours with the outcome of our
+	 * review. other: The payment is pending for a reason other
+	 * than those listed above. For more information, contact
 	 * PayPal Customer Service.
 	 * @access public
 	 
@@ -6050,15 +6020,36 @@ class PaymentInfoType
 	 */ 
 	public $OfferDetails;
 
+	/**
+	 * This field indicates whether the credit card number used for
+	 * this transaction is in a particular bin range registered
+	 * with PayPal by the merchant. This filed is optional and will
+	 * be present if merchant has a registered bin range. The value
+	 * of this field will be “true” if merchant has a
+	 * registered bin range and the credit card used in the
+	 * transaction is within the registered bin range. The value of
+	 * this field will be false if merchant has a registered bin
+	 * range and credit card used in the transaction outside
+	 * registered bin range or the transaction is not done using a
+	 * credit card. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $BinEligibility;
+
 
 }
 
 
 
 /**
+ * @hasAttribute
  * SubscriptionTermsType Terms of a PayPal subscription. 
  */
- 
 class SubscriptionTermsType  
    extends PPXmlMessage{
 
@@ -6073,16 +6064,29 @@ class SubscriptionTermsType
 	 */ 
 	public $Amount;
 
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
+	 * @attribute 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $period;
+
 
 }
 
 
 
 /**
+ * @hasAttribute
  * SubscriptionInfoType Information about a PayPal
  * Subscription. 
  */
- 
 class SubscriptionInfoType  
    extends PPXmlMessage{
 
@@ -6182,15 +6186,41 @@ class SubscriptionInfoType
 	 */ 
 	public $Terms;
 
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
+	 * @attribute 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $reattempt;
+
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
+	 * @attribute 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $recurring;
+
 
 }
 
 
 
 /**
+ * @hasAttribute
  * AuctionInfoType Basic information about an auction. 
  */
- 
 class AuctionInfoType  
    extends PPXmlMessage{
 
@@ -6216,17 +6246,56 @@ class AuctionInfoType
 	 */ 
 	public $ClosingDate;
 
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
+	 * @attribute 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $multiItem;
+
 
 }
 
 
 
 /**
+ * @hasAttribute
  * OptionType PayPal item options for shopping cart. 
  */
- 
 class OptionType  
    extends PPXmlMessage{
+
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
+	 * @attribute 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $name;
+
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
+	 * @attribute 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $value;
 
 
 }
@@ -6237,7 +6306,6 @@ class OptionType
  * EbayItemPaymentDetailsItemType - Type declaration to be used
  * by other schemas. Information about an Ebay Payment Item. 
  */
- 
 class EbayItemPaymentDetailsItemType  
    extends PPXmlMessage{
 
@@ -6298,7 +6366,6 @@ class EbayItemPaymentDetailsItemType
 /**
  * PaymentDetailsItemType Information about a Payment Item. 
  */
- 
 class PaymentDetailsItemType  
    extends PPXmlMessage{
 
@@ -6500,7 +6567,6 @@ class PaymentDetailsItemType
 /**
  * PaymentItemType Information about a Payment Item. 
  */
- 
 class PaymentItemType  
    extends PPXmlMessage{
 
@@ -6683,7 +6749,6 @@ class PaymentItemType
 /**
  * PaymentItemInfoType Information about a PayPal item. 
  */
- 
 class PaymentItemInfoType  
    extends PPXmlMessage{
 
@@ -6782,7 +6847,6 @@ class PaymentItemInfoType
  * OffersAndCouponsInfoType Information about a Offers and
  * Coupons. 
  */
- 
 class OfferCouponInfoType  
    extends PPXmlMessage{
 
@@ -6839,7 +6903,6 @@ class OfferCouponInfoType
  * PaymentDetailsType Information about a payment. Used by DCC
  * and Express Checkout. 
  */
- 
 class PaymentDetailsType  
    extends PPXmlMessage{
 
@@ -7279,7 +7342,6 @@ class PaymentDetailsType
  * Information about the incentives that were applied from Ebay
  * RYP page and PayPal RYP page. 
  */
- 
 class IncentiveDetailsType  
    extends PPXmlMessage{
 
@@ -7362,7 +7424,6 @@ class IncentiveDetailsType
 /**
  * Details of incentive application on individual bucket/item. 
  */
- 
 class IncentiveAppliedDetailsType  
    extends PPXmlMessage{
 
@@ -7430,7 +7491,6 @@ class IncentiveAppliedDetailsType
 /**
  * Details about the seller. 
  */
- 
 class SellerDetailsType  
    extends PPXmlMessage{
 
@@ -7504,7 +7564,6 @@ class SellerDetailsType
  * Lists the Payment Methods (other than PayPal) that the use
  * can pay with e.g. Money Order. Optional. 
  */
- 
 class OtherPaymentMethodDetailsType  
    extends PPXmlMessage{
 
@@ -7609,7 +7668,6 @@ class OtherPaymentMethodDetailsType
  * Details about the buyer's account passed in by the merchant
  * or partner. Optional. 
  */
- 
 class BuyerDetailsType  
    extends PPXmlMessage{
 
@@ -7680,7 +7738,6 @@ class BuyerDetailsType
  * Details about the payer's tax info passed in by the merchant
  * or partner. Optional. 
  */
- 
 class TaxIdDetailsType  
    extends PPXmlMessage{
 
@@ -7715,7 +7772,6 @@ class TaxIdDetailsType
 /**
  * The Common 3DS fields. Common for both GTD and DCC API's. 
  */
- 
 class ThreeDSecureRequestType  
    extends PPXmlMessage{
 
@@ -7783,7 +7839,6 @@ class ThreeDSecureRequestType
 /**
  * 3DS remaining fields. 
  */
- 
 class ThreeDSecureResponseType  
    extends PPXmlMessage{
 
@@ -7817,7 +7872,6 @@ class ThreeDSecureResponseType
 /**
  * 3DSecureInfoType Information about 3D Secure parameters. 
  */
- 
 class ThreeDSecureInfoType  
    extends PPXmlMessage{
 
@@ -7851,7 +7905,6 @@ class ThreeDSecureInfoType
 /**
  * CreditCardDetailsType Information about a Credit Card. 
  */
- 
 class CreditCardDetailsType  
    extends PPXmlMessage{
 
@@ -7974,7 +8027,6 @@ class CreditCardDetailsType
 /**
  * Fallback shipping options type. 
  */
- 
 class ShippingOptionType  
    extends PPXmlMessage{
 
@@ -8020,7 +8072,6 @@ class ShippingOptionType
 /**
  * Information on user selected options 
  */
- 
 class UserSelectedOptionType  
    extends PPXmlMessage{
 
@@ -8088,7 +8139,6 @@ class UserSelectedOptionType
 /**
  * 
  */
- 
 class CreditCardNumberTypeType  
    extends PPXmlMessage{
 
@@ -8124,7 +8174,6 @@ class CreditCardNumberTypeType
  * CreditCardDetailsType for DCC Reference Transaction
  * Information about a Credit Card. 
  */
- 
 class ReferenceCreditCardDetailsType  
    extends PPXmlMessage{
 
@@ -8236,7 +8285,6 @@ class ReferenceCreditCardDetailsType
 /**
  * 
  */
- 
 class SetCustomerBillingAgreementRequestDetailsType  
    extends PPXmlMessage{
 
@@ -8390,7 +8438,6 @@ class SetCustomerBillingAgreementRequestDetailsType
 /**
  * 
  */
- 
 class GetBillingAgreementCustomerDetailsResponseDetailsType  
    extends PPXmlMessage{
 
@@ -8430,7 +8477,6 @@ class GetBillingAgreementCustomerDetailsResponseDetailsType
  * single-byte characters DeviceID length morethan 256 is
  * truncated  
  */
- 
 class DeviceDetailsType  
    extends PPXmlMessage{
 
@@ -8456,7 +8502,6 @@ class DeviceDetailsType
 /**
  * 
  */
- 
 class SenderDetailsType  
    extends PPXmlMessage{
 
@@ -8480,7 +8525,6 @@ class SenderDetailsType
 /**
  * 
  */
- 
 class DoReferenceTransactionRequestDetailsType  
    extends PPXmlMessage{
 
@@ -8625,7 +8669,6 @@ class DoReferenceTransactionRequestDetailsType
 /**
  * 
  */
- 
 class DoReferenceTransactionResponseDetailsType  
    extends PPXmlMessage{
 
@@ -8726,7 +8769,6 @@ class DoReferenceTransactionResponseDetailsType
 /**
  * 
  */
- 
 class DoNonReferencedCreditRequestDetailsType  
    extends PPXmlMessage{
 
@@ -8816,7 +8858,6 @@ class DoNonReferencedCreditRequestDetailsType
 /**
  * 
  */
- 
 class DoNonReferencedCreditResponseDetailsType  
    extends PPXmlMessage{
 
@@ -8852,7 +8893,6 @@ class DoNonReferencedCreditResponseDetailsType
  * Character length and limitations: 64 alphanumeric characters
  * 
  */
- 
 class EnterBoardingRequestDetailsType  
    extends PPXmlMessage{
 
@@ -8970,7 +9010,6 @@ class EnterBoardingRequestDetailsType
 /**
  * BusinessInfoType 
  */
- 
 class BusinessInfoType  
    extends PPXmlMessage{
 
@@ -9168,7 +9207,6 @@ class BusinessInfoType
 /**
  * BusinessOwnerInfoType 
  */
- 
 class BusinessOwnerInfoType  
    extends PPXmlMessage{
 
@@ -9228,7 +9266,6 @@ class BusinessOwnerInfoType
 /**
  * BankAccountDetailsType 
  */
- 
 class BankAccountDetailsType  
    extends PPXmlMessage{
 
@@ -9290,7 +9327,6 @@ class BankAccountDetailsType
  * CompletedCancelledPending Character length and limitations:
  * Eight alphabetic characters 
  */
- 
 class GetBoardingDetailsResponseDetailsType  
    extends PPXmlMessage{
 
@@ -9479,7 +9515,6 @@ class GetBoardingDetailsResponseDetailsType
 /**
  * APICredentialsType 
  */
- 
 class APICredentialsType  
    extends PPXmlMessage{
 
@@ -9557,7 +9592,6 @@ class APICredentialsType
  * The phone number of the buyer's mobile device, if available.
  * Optional 
  */
- 
 class SetMobileCheckoutRequestDetailsType  
    extends PPXmlMessage{
 
@@ -9768,7 +9802,6 @@ class SetMobileCheckoutRequestDetailsType
  * Optional Character length and limitations: 256 single-byte
  * alphanumeric characters 
  */
- 
 class DoMobileCheckoutPaymentResponseDetailsType  
    extends PPXmlMessage{
 
@@ -9829,7 +9862,6 @@ class DoMobileCheckoutPaymentResponseDetailsType
 /**
  * UATP Card Details Type 
  */
- 
 class UATPDetailsType  
    extends PPXmlMessage{
 
@@ -9875,7 +9907,6 @@ class UATPDetailsType
 /**
  * 
  */
- 
 class RecurringPaymentsSummaryType  
    extends PPXmlMessage{
 
@@ -9964,7 +9995,6 @@ class RecurringPaymentsSummaryType
 /**
  * 
  */
- 
 class ActivationDetailsType  
    extends PPXmlMessage{
 
@@ -10006,7 +10036,6 @@ class ActivationDetailsType
 /**
  * Unit of meausre for billing cycle 
  */
- 
 class BillingPeriodDetailsType  
    extends PPXmlMessage{
 
@@ -10094,7 +10123,6 @@ class BillingPeriodDetailsType
 /**
  * Unit of meausre for billing cycle 
  */
- 
 class BillingPeriodDetailsType_Update  
    extends PPXmlMessage{
 
@@ -10173,7 +10201,6 @@ class BillingPeriodDetailsType_Update
 /**
  * Schedule details for the Recurring Payment 
  */
- 
 class ScheduleDetailsType  
    extends PPXmlMessage{
 
@@ -10262,7 +10289,6 @@ class ScheduleDetailsType
  * Subscriber name - if missing, will use name in buyer's
  * account 
  */
- 
 class RecurringPaymentsProfileDetailsType  
    extends PPXmlMessage{
 
@@ -10330,7 +10356,6 @@ class RecurringPaymentsProfileDetailsType
 /**
  * Billing Agreement token (required if Express Checkout) 
  */
- 
 class CreateRecurringPaymentsProfileRequestDetailsType  
    extends PPXmlMessage{
 
@@ -10408,7 +10433,6 @@ class CreateRecurringPaymentsProfileRequestDetailsType
 /**
  * Recurring Billing Profile ID 
  */
- 
 class CreateRecurringPaymentsProfileResponseDetailsType  
    extends PPXmlMessage{
 
@@ -10475,7 +10499,6 @@ class CreateRecurringPaymentsProfileResponseDetailsType
 /**
  * Recurring Billing Profile ID 
  */
- 
 class GetRecurringPaymentsProfileDetailsResponseDetailsType  
    extends PPXmlMessage{
 
@@ -10663,7 +10686,6 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 /**
  * 
  */
- 
 class ManageRecurringPaymentsProfileStatusRequestDetailsType  
    extends PPXmlMessage{
 
@@ -10717,7 +10739,6 @@ class ManageRecurringPaymentsProfileStatusRequestDetailsType
 /**
  * 
  */
- 
 class ManageRecurringPaymentsProfileStatusResponseDetailsType  
    extends PPXmlMessage{
 
@@ -10740,7 +10761,6 @@ class ManageRecurringPaymentsProfileStatusResponseDetailsType
 /**
  * 
  */
- 
 class BillOutstandingAmountRequestDetailsType  
    extends PPXmlMessage{
 
@@ -10793,7 +10813,6 @@ class BillOutstandingAmountRequestDetailsType
 /**
  * 
  */
- 
 class BillOutstandingAmountResponseDetailsType  
    extends PPXmlMessage{
 
@@ -10816,7 +10835,6 @@ class BillOutstandingAmountResponseDetailsType
 /**
  * 
  */
- 
 class UpdateRecurringPaymentsProfileRequestDetailsType  
    extends PPXmlMessage{
 
@@ -11024,7 +11042,6 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 /**
  * 
  */
- 
 class UpdateRecurringPaymentsProfileResponseDetailsType  
    extends PPXmlMessage{
 
@@ -11047,7 +11064,6 @@ class UpdateRecurringPaymentsProfileResponseDetailsType
 /**
  * Details of Risk Filter. 
  */
- 
 class RiskFilterDetailsType  
    extends PPXmlMessage{
 
@@ -11092,7 +11108,6 @@ class RiskFilterDetailsType
 /**
  * Details of Risk Filter. 
  */
- 
 class RiskFilterListType  
    extends PPXmlMessage{
 
@@ -11117,7 +11132,6 @@ class RiskFilterListType
  * Thes are filters that could result in accept/deny/pending
  * action. 
  */
- 
 class FMFDetailsType  
    extends PPXmlMessage{
 
@@ -11173,7 +11187,6 @@ class FMFDetailsType
 /**
  * Enhanced Data Information. Example: AID for Airlines 
  */
- 
 class EnhancedDataType  
    extends PPXmlMessage{
 
@@ -11197,7 +11210,6 @@ class EnhancedDataType
 /**
  * AID for Airlines 
  */
- 
 class AirlineItineraryType  
    extends PPXmlMessage{
 
@@ -11365,7 +11377,6 @@ class AirlineItineraryType
 /**
  * Details of leg information 
  */
- 
 class FlightDetailsType  
    extends PPXmlMessage{
 
@@ -11565,7 +11576,6 @@ class FlightDetailsType
 /**
  * Authorization details 
  */
- 
 class AuthorizationInfoType  
    extends PPXmlMessage{
 
@@ -11651,7 +11661,6 @@ class AuthorizationInfoType
 /**
  * Option Number. Optional 
  */
- 
 class OptionTrackingDetailsType  
    extends PPXmlMessage{
 
@@ -11730,7 +11739,6 @@ class OptionTrackingDetailsType
 /**
  * Item Number. Required 
  */
- 
 class ItemTrackingDetailsType  
    extends PPXmlMessage{
 
@@ -11798,7 +11806,6 @@ class ItemTrackingDetailsType
 /**
  * 
  */
- 
 class ButtonSearchResultType  
    extends PPXmlMessage{
 
@@ -11856,7 +11863,6 @@ class ButtonSearchResultType
  * length and limitations: 17 single-byte alphanumeric
  * characters 
  */
- 
 class ReverseTransactionRequestDetailsType  
    extends PPXmlMessage{
 
@@ -11884,7 +11890,6 @@ class ReverseTransactionRequestDetailsType
  * created. Character length and limitations:17 single-byte
  * characters 
  */
- 
 class ReverseTransactionResponseDetailsType  
    extends PPXmlMessage{
 
@@ -11920,7 +11925,6 @@ class ReverseTransactionResponseDetailsType
 /**
  * Details of incentive application on individual bucket. 
  */
- 
 class IncentiveInfoType  
    extends PPXmlMessage{
 
@@ -11958,7 +11962,6 @@ class IncentiveInfoType
  * Defines which bucket or item that the incentive should be
  * applied to. 
  */
- 
 class IncentiveApplyIndicationType  
    extends PPXmlMessage{
 
@@ -11994,7 +11997,6 @@ class IncentiveApplyIndicationType
  * Contains payment request information for each bucket in the
  * cart.  
  */
- 
 class PaymentRequestInfoType  
    extends PPXmlMessage{
 
@@ -12040,7 +12042,6 @@ class PaymentRequestInfoType
  * E-mail address or secure merchant account ID of merchant to
  * associate with new external remember-me. 
  */
- 
 class ExternalRememberMeOwnerDetailsType  
    extends PPXmlMessage{
 
@@ -12091,7 +12092,6 @@ class ExternalRememberMeOwnerDetailsType
  * buyer or to request login bypass using external remember me.
  * 
  */
- 
 class ExternalRememberMeOptInDetailsType  
    extends PPXmlMessage{
 
@@ -12131,7 +12131,6 @@ class ExternalRememberMeOptInDetailsType
 /**
  * An optional set of values related to flow-specific details. 
  */
- 
 class FlowControlDetailsType  
    extends PPXmlMessage{
 
@@ -12170,7 +12169,6 @@ class FlowControlDetailsType
  * Response information resulting from opt-in operation or
  * current login bypass status. 
  */
- 
 class ExternalRememberMeStatusDetailsType  
    extends PPXmlMessage{
 
@@ -12219,7 +12217,6 @@ class ExternalRememberMeStatusDetailsType
  * Response information resulting from opt-in operation or
  * current login bypass status. 
  */
- 
 class RefreshTokenStatusDetailsType  
    extends PPXmlMessage{
 
@@ -12279,7 +12276,6 @@ class RefreshTokenStatusDetailsType
  * Contains elements that allows customization of display (user
  * interface) elements. 
  */
- 
 class DisplayControlDetailsType  
    extends PPXmlMessage{
 
@@ -12306,7 +12302,6 @@ class DisplayControlDetailsType
  * Contains elements that allow tracking for an external
  * partner. 
  */
- 
 class ExternalPartnerTrackingDetailsType  
    extends PPXmlMessage{
 
@@ -12340,7 +12335,6 @@ class ExternalPartnerTrackingDetailsType
  * Store IDOptional Character length and limits: 50 single-byte
  * characters 
  */
- 
 class MerchantStoreDetailsType  
    extends PPXmlMessage{
 
@@ -12384,7 +12378,6 @@ class MerchantStoreDetailsType
 /**
  * 
  */
- 
 class AdditionalFeeType  
    extends PPXmlMessage{
 
@@ -12419,7 +12412,6 @@ class AdditionalFeeType
 /**
  * Describes discount information 
  */
- 
 class DiscountType  
    extends PPXmlMessage{
 
@@ -12497,7 +12489,6 @@ class DiscountType
 /**
  * Describes an individual item for an invoice. 
  */
- 
 class InvoiceItemType  
    extends PPXmlMessage{
 
@@ -12742,7 +12733,6 @@ class InvoiceItemType
 /**
  * Holds refunds payment status information 
  */
- 
 class RefundInfoType  
    extends PPXmlMessage{
 
@@ -12776,7 +12766,6 @@ class RefundInfoType
 /**
  * Defines relationship between buckets 
  */
- 
 class CoupledBucketsType  
    extends PPXmlMessage{
 
@@ -12830,7 +12819,6 @@ class CoupledBucketsType
 /**
  * Information about Coupled Payment transactions. 
  */
- 
 class CoupledPaymentInfoType  
    extends PPXmlMessage{
 
@@ -12865,7 +12853,6 @@ class CoupledPaymentInfoType
 /**
  * 
  */
- 
 class EnhancedCheckoutDataType  
    extends PPXmlMessage{
 
@@ -12878,7 +12865,6 @@ class EnhancedCheckoutDataType
 /**
  * 
  */
- 
 class EnhancedPaymentDataType  
    extends PPXmlMessage{
 
@@ -12891,7 +12877,6 @@ class EnhancedPaymentDataType
 /**
  * 
  */
- 
 class EnhancedItemDataType  
    extends PPXmlMessage{
 
@@ -12904,7 +12889,6 @@ class EnhancedItemDataType
 /**
  * 
  */
- 
 class EnhancedPaymentInfoType  
    extends PPXmlMessage{
 
@@ -12916,7 +12900,6 @@ class EnhancedPaymentInfoType
 /**
  * 
  */
- 
 class EnhancedInitiateRecoupRequestDetailsType  
    extends PPXmlMessage{
 
@@ -12929,7 +12912,6 @@ class EnhancedInitiateRecoupRequestDetailsType
 /**
  * 
  */
- 
 class EnhancedCompleteRecoupRequestDetailsType  
    extends PPXmlMessage{
 
@@ -12942,7 +12924,6 @@ class EnhancedCompleteRecoupRequestDetailsType
 /**
  * 
  */
- 
 class EnhancedCompleteRecoupResponseDetailsType  
    extends PPXmlMessage{
 
@@ -12954,7 +12935,6 @@ class EnhancedCompleteRecoupResponseDetailsType
 /**
  * 
  */
- 
 class EnhancedCancelRecoupRequestDetailsType  
    extends PPXmlMessage{
 
@@ -12967,7 +12947,6 @@ class EnhancedCancelRecoupRequestDetailsType
 /**
  * 
  */
- 
 class EnhancedPayerInfoType  
    extends PPXmlMessage{
 
@@ -12980,7 +12959,6 @@ class EnhancedPayerInfoType
 /**
  * Installment Period. Optional 
  */
- 
 class InstallmentDetailsType  
    extends PPXmlMessage{
 
@@ -13060,7 +13038,6 @@ class InstallmentDetailsType
  * Option Selection. Required Character length and limitations:
  * 12 single-byte alphanumeric characters 
  */
- 
 class OptionSelectionDetailsType  
    extends PPXmlMessage{
 
@@ -13126,7 +13103,6 @@ class OptionSelectionDetailsType
 /**
  * Option Name. Optional 
  */
- 
 class OptionDetailsType  
    extends PPXmlMessage{
 
@@ -13169,7 +13145,6 @@ class OptionDetailsType
 /**
  * 
  */
- 
 class BMCreateButtonReq  
    extends PPXmlMessage{
 
@@ -13208,7 +13183,6 @@ class BMCreateButtonReq
  * following: BUYNOW, CART, GIFTCERTIFICATE. SUBSCRIBE,
  * PAYMENTPLAN, AUTOBILLING, DONATE, VIEWCART or UNSUBSCRIBE  
  */
- 
 class BMCreateButtonRequestType  extends AbstractRequestType  
   {
 
@@ -13368,7 +13342,6 @@ class BMCreateButtonRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class BMCreateButtonResponseType  extends AbstractResponseType  
   {
 
@@ -13424,7 +13397,6 @@ class BMCreateButtonResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class BMUpdateButtonReq  
    extends PPXmlMessage{
 
@@ -13463,7 +13435,6 @@ class BMUpdateButtonReq
  * Character length and limitations: 10 single-byte numeric
  * characters  
  */
- 
 class BMUpdateButtonRequestType  extends AbstractRequestType  
   {
 
@@ -13643,7 +13614,6 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class BMUpdateButtonResponseType  extends AbstractResponseType  
   {
 
@@ -13699,7 +13669,6 @@ class BMUpdateButtonResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class BMManageButtonStatusReq  
    extends PPXmlMessage{
 
@@ -13737,7 +13706,6 @@ class BMManageButtonStatusReq
  * Button ID of Hosted button.  Required Character length and
  * limitations: 10 single-byte numeric characters  
  */
- 
 class BMManageButtonStatusRequestType  extends AbstractRequestType  
   {
 
@@ -13775,7 +13743,6 @@ class BMManageButtonStatusRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class BMManageButtonStatusResponseType  extends AbstractResponseType  
   {
 
@@ -13787,7 +13754,6 @@ class BMManageButtonStatusResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class BMGetButtonDetailsReq  
    extends PPXmlMessage{
 
@@ -13825,7 +13791,6 @@ class BMGetButtonDetailsReq
  * Button ID of button to return.  Required Character length
  * and limitations: 10 single-byte numeric characters  
  */
- 
 class BMGetButtonDetailsRequestType  extends AbstractRequestType  
   {
 
@@ -13859,7 +13824,6 @@ class BMGetButtonDetailsRequestType  extends AbstractRequestType
  * GIFTCERTIFICATE. SUBSCRIBE, PAYMENTPLAN, AUTOBILLING,
  * DONATE, VIEWCART or UNSUBSCRIBE 
  */
- 
 class BMGetButtonDetailsResponseType  extends AbstractResponseType  
   {
 
@@ -14057,7 +14021,6 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class BMSetInventoryReq  
    extends PPXmlMessage{
 
@@ -14096,7 +14059,6 @@ class BMSetInventoryReq
  * Character length and limitations: 10 single-byte numeric
  * characters  
  */
- 
 class BMSetInventoryRequestType  extends AbstractRequestType  
   {
 
@@ -14240,7 +14202,6 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class BMSetInventoryResponseType  extends AbstractResponseType  
   {
 
@@ -14252,7 +14213,6 @@ class BMSetInventoryResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class BMGetInventoryReq  
    extends PPXmlMessage{
 
@@ -14291,7 +14251,6 @@ class BMGetInventoryReq
  * Required Character length and limitations: 10 single-byte
  * numeric characters  
  */
- 
 class BMGetInventoryRequestType  extends AbstractRequestType  
   {
 
@@ -14324,7 +14283,6 @@ class BMGetInventoryRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class BMGetInventoryResponseType  extends AbstractResponseType  
   {
 
@@ -14437,7 +14395,6 @@ class BMGetInventoryResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class BMButtonSearchReq  
    extends PPXmlMessage{
 
@@ -14475,7 +14432,6 @@ class BMButtonSearchReq
  * The earliest transaction date at which to start the search.
  * No wildcards are allowed. Required 
  */
- 
 class BMButtonSearchRequestType  extends AbstractRequestType  
   {
 
@@ -14512,7 +14468,6 @@ class BMButtonSearchRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class BMButtonSearchResponseType  extends AbstractResponseType  
   {
 
@@ -14536,7 +14491,6 @@ class BMButtonSearchResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class RefundTransactionReq  
    extends PPXmlMessage{
 
@@ -14575,7 +14529,6 @@ class RefundTransactionReq
  * Optional Character length and limitations: 17 single-byte
  * alphanumeric characters 
  */
- 
 class RefundTransactionRequestType  extends AbstractRequestType  
   {
 
@@ -14738,7 +14691,6 @@ class RefundTransactionRequestType  extends AbstractRequestType
  * Unique transaction ID of the refund. Character length and
  * limitations:17 single-byte characters 
  */
- 
 class RefundTransactionResponseType  extends AbstractResponseType  
   {
 
@@ -14841,7 +14793,6 @@ class RefundTransactionResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class InitiateRecoupReq  
    extends PPXmlMessage{
 
@@ -14878,7 +14829,6 @@ class InitiateRecoupReq
 /**
  * 
  */
- 
 class InitiateRecoupRequestType  extends AbstractRequestType  
   {
 
@@ -14909,7 +14859,6 @@ class InitiateRecoupRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class InitiateRecoupResponseType  extends AbstractResponseType  
   {
 
@@ -14921,7 +14870,6 @@ class InitiateRecoupResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class CompleteRecoupReq  
    extends PPXmlMessage{
 
@@ -14958,7 +14906,6 @@ class CompleteRecoupReq
 /**
  * 
  */
- 
 class CompleteRecoupRequestType  extends AbstractRequestType  
   {
 
@@ -14989,7 +14936,6 @@ class CompleteRecoupRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class CompleteRecoupResponseType  extends AbstractResponseType  
   {
 
@@ -15012,7 +14958,6 @@ class CompleteRecoupResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class CancelRecoupReq  
    extends PPXmlMessage{
 
@@ -15049,7 +14994,6 @@ class CancelRecoupReq
 /**
  * 
  */
- 
 class CancelRecoupRequestType  extends AbstractRequestType  
   {
 
@@ -15080,7 +15024,6 @@ class CancelRecoupRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class CancelRecoupResponseType  extends AbstractResponseType  
   {
 
@@ -15092,7 +15035,6 @@ class CancelRecoupResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class GetTransactionDetailsReq  
    extends PPXmlMessage{
 
@@ -15133,7 +15075,6 @@ class GetTransactionDetailsReq
  * bank transfer withdrawals, for example. Character length and
  * limitations: 17 single-byte alphanumeric characters
  */
- 
 class GetTransactionDetailsRequestType  extends AbstractRequestType  
   {
 
@@ -15161,7 +15102,6 @@ class GetTransactionDetailsRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class GetTransactionDetailsResponseType  extends AbstractResponseType  
   {
 
@@ -15195,7 +15135,6 @@ class GetTransactionDetailsResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class BillUserReq  
    extends PPXmlMessage{
 
@@ -15233,7 +15172,6 @@ class BillUserReq
  * This flag indicates that the response should include
  * FMFDetails 
  */
- 
 class BillUserRequestType  extends AbstractRequestType  
   {
 
@@ -15269,7 +15207,6 @@ class BillUserRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class BillUserResponseType  extends AbstractResponseType  
   {
 
@@ -15303,7 +15240,6 @@ class BillUserResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class TransactionSearchReq  
    extends PPXmlMessage{
 
@@ -15341,7 +15277,6 @@ class TransactionSearchReq
  * The earliest transaction date at which to start the search.
  * No wildcards are allowed. Required
  */
- 
 class TransactionSearchRequestType  extends AbstractRequestType  
   {
 
@@ -15583,7 +15518,6 @@ class TransactionSearchRequestType  extends AbstractRequestType
 /**
  * Results of a Transaction Search.
  */
- 
 class TransactionSearchResponseType  extends AbstractResponseType  
   {
 
@@ -15607,7 +15541,6 @@ class TransactionSearchResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class MassPayReq  
    extends PPXmlMessage{
 
@@ -15647,7 +15580,6 @@ class MassPayReq
  * it with your application. Optional Character length and
  * limitations: 255 single-byte alphanumeric characters 
  */
- 
 class MassPayRequestType  extends AbstractRequestType  
   {
 
@@ -15722,7 +15654,6 @@ class MassPayRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class MassPayResponseType  extends AbstractResponseType  
   {
 
@@ -15734,7 +15665,6 @@ class MassPayResponseType  extends AbstractResponseType
 /**
  * MassPayRequestItemType 
  */
- 
 class MassPayRequestItemType  
    extends PPXmlMessage{
 
@@ -15841,7 +15771,6 @@ class MassPayRequestItemType
 /**
  * 
  */
- 
 class BillAgreementUpdateReq  
    extends PPXmlMessage{
 
@@ -15878,7 +15807,6 @@ class BillAgreementUpdateReq
 /**
  * 
  */
- 
 class BAUpdateRequestType  extends AbstractRequestType  
   {
 
@@ -15942,7 +15870,6 @@ class BAUpdateRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class BAUpdateResponseType  extends AbstractResponseType  
   {
 
@@ -15965,7 +15892,6 @@ class BAUpdateResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class AddressVerifyReq  
    extends PPXmlMessage{
 
@@ -16004,7 +15930,6 @@ class AddressVerifyReq
  * string length: 255 single-byte characters Input mask: ?@?.??
  * 
  */
- 
 class AddressVerifyRequestType  extends AbstractRequestType  
   {
 
@@ -16075,7 +16000,6 @@ class AddressVerifyRequestType  extends AbstractRequestType
  * entire postal address is confirmed. Unconfirmed: PayPal
  * responds that the postal address is unconfirmed 
  */
- 
 class AddressVerifyResponseType  extends AbstractResponseType  
   {
 
@@ -16169,7 +16093,6 @@ class AddressVerifyResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class EnterBoardingReq  
    extends PPXmlMessage{
 
@@ -16206,7 +16129,6 @@ class EnterBoardingReq
 /**
  * 
  */
- 
 class EnterBoardingRequestType  extends AbstractRequestType  
   {
 
@@ -16240,7 +16162,6 @@ class EnterBoardingRequestType  extends AbstractRequestType
  * length and limitations: 64 alphanumeric characters. The
  * token has the following format:OB-61characterstring
  */
- 
 class EnterBoardingResponseType  extends AbstractResponseType  
   {
 
@@ -16266,7 +16187,6 @@ class EnterBoardingResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class GetBoardingDetailsReq  
    extends PPXmlMessage{
 
@@ -16306,7 +16226,6 @@ class GetBoardingDetailsReq
  * and limitations: 64 alphanumeric characters. The token has
  * the following format:OB-61characterstring
  */
- 
 class GetBoardingDetailsRequestType  extends AbstractRequestType  
   {
 
@@ -16340,7 +16259,6 @@ class GetBoardingDetailsRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class GetBoardingDetailsResponseType  extends AbstractResponseType  
   {
 
@@ -16363,7 +16281,6 @@ class GetBoardingDetailsResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class SetAuthFlowParamReq  
    extends PPXmlMessage{
 
@@ -16400,7 +16317,6 @@ class SetAuthFlowParamReq
 /**
  * 
  */
- 
 class SetAuthFlowParamRequestType  extends AbstractRequestType  
   {
 
@@ -16434,7 +16350,6 @@ class SetAuthFlowParamRequestType  extends AbstractRequestType
  * hours. Character length and limitations: 20 single-byte
  * characters
  */
- 
 class SetAuthFlowParamResponseType  extends AbstractResponseType  
   {
 
@@ -16460,7 +16375,6 @@ class SetAuthFlowParamResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class GetAuthDetailsReq  
    extends PPXmlMessage{
 
@@ -16499,7 +16413,6 @@ class GetAuthDetailsReq
  * SetAuthFlowParam Response. RequiredCharacter length and
  * limitations: 20 single-byte characters
  */
- 
 class GetAuthDetailsRequestType  extends AbstractRequestType  
   {
 
@@ -16532,7 +16445,6 @@ class GetAuthDetailsRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class GetAuthDetailsResponseType  extends AbstractResponseType  
   {
 
@@ -16555,7 +16467,6 @@ class GetAuthDetailsResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class SetAccessPermissionsReq  
    extends PPXmlMessage{
 
@@ -16592,7 +16503,6 @@ class SetAccessPermissionsReq
 /**
  * 
  */
- 
 class SetAccessPermissionsRequestType  extends AbstractRequestType  
   {
 
@@ -16626,7 +16536,6 @@ class SetAccessPermissionsRequestType  extends AbstractRequestType
  * hours. Character length and limitations: 20 single-byte
  * characters
  */
- 
 class SetAccessPermissionsResponseType  extends AbstractResponseType  
   {
 
@@ -16652,7 +16561,6 @@ class SetAccessPermissionsResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class UpdateAccessPermissionsReq  
    extends PPXmlMessage{
 
@@ -16691,7 +16599,6 @@ class UpdateAccessPermissionsReq
  * was returned by GetAuthDetails Response. Required Character
  * length and limitations: 20 single-byte characters 
  */
- 
 class UpdateAccessPermissionsRequestType  extends AbstractRequestType  
   {
 
@@ -16725,7 +16632,6 @@ class UpdateAccessPermissionsRequestType  extends AbstractRequestType
  * The status of the update call, Success/Failure. Character
  * length and limitations: 20 single-byte characters 
  */
- 
 class UpdateAccessPermissionsResponseType  extends AbstractResponseType  
   {
 
@@ -16749,7 +16655,6 @@ class UpdateAccessPermissionsResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class GetAccessPermissionDetailsReq  
    extends PPXmlMessage{
 
@@ -16788,7 +16693,6 @@ class GetAccessPermissionDetailsReq
  * SetAuthFlowParam Response. Required Character length and
  * limitations: 20 single-byte characters 
  */
- 
 class GetAccessPermissionDetailsRequestType  extends AbstractRequestType  
   {
 
@@ -16821,7 +16725,6 @@ class GetAccessPermissionDetailsRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class GetAccessPermissionDetailsResponseType  extends AbstractResponseType  
   {
 
@@ -16844,7 +16747,6 @@ class GetAccessPermissionDetailsResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class GetIncentiveEvaluationReq  
    extends PPXmlMessage{
 
@@ -16881,7 +16783,6 @@ class GetIncentiveEvaluationReq
 /**
  * 
  */
- 
 class GetIncentiveEvaluationRequestType  extends AbstractRequestType  
   {
 
@@ -16912,7 +16813,6 @@ class GetIncentiveEvaluationRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class GetIncentiveEvaluationResponseType  extends AbstractResponseType  
   {
 
@@ -16935,7 +16835,6 @@ class GetIncentiveEvaluationResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class SetExpressCheckoutReq  
    extends PPXmlMessage{
 
@@ -16972,7 +16871,6 @@ class SetExpressCheckoutReq
 /**
  * 
  */
- 
 class SetExpressCheckoutRequestType  extends AbstractRequestType  
   {
 
@@ -17008,7 +16906,6 @@ class SetExpressCheckoutRequestType  extends AbstractRequestType
  * response is identical to the value in the request. Character
  * length and limitations: 20 single-byte characters
  */
- 
 class SetExpressCheckoutResponseType  extends AbstractResponseType  
   {
 
@@ -17036,7 +16933,6 @@ class SetExpressCheckoutResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class ExecuteCheckoutOperationsReq  
    extends PPXmlMessage{
 
@@ -17073,7 +16969,6 @@ class ExecuteCheckoutOperationsReq
 /**
  * 
  */
- 
 class ExecuteCheckoutOperationsRequestType  extends AbstractRequestType  
   {
 
@@ -17104,7 +16999,6 @@ class ExecuteCheckoutOperationsRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class ExecuteCheckoutOperationsResponseType  extends AbstractResponseType  
   {
 
@@ -17127,7 +17021,6 @@ class ExecuteCheckoutOperationsResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class GetExpressCheckoutDetailsReq  
    extends PPXmlMessage{
 
@@ -17166,7 +17059,6 @@ class GetExpressCheckoutDetailsReq
  * SetExpressCheckoutResponse. RequiredCharacter length and
  * limitations: 20 single-byte characters
  */
- 
 class GetExpressCheckoutDetailsRequestType  extends AbstractRequestType  
   {
 
@@ -17199,7 +17091,6 @@ class GetExpressCheckoutDetailsRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class GetExpressCheckoutDetailsResponseType  extends AbstractResponseType  
   {
 
@@ -17222,7 +17113,6 @@ class GetExpressCheckoutDetailsResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class DoExpressCheckoutPaymentReq  
    extends PPXmlMessage{
 
@@ -17260,7 +17150,6 @@ class DoExpressCheckoutPaymentReq
  * This flag indicates that the response should include
  * FMFDetails 
  */
- 
 class DoExpressCheckoutPaymentRequestType  extends AbstractRequestType  
   {
 
@@ -17303,7 +17192,6 @@ class DoExpressCheckoutPaymentRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class DoExpressCheckoutPaymentResponseType  extends AbstractResponseType  
   {
 
@@ -17337,7 +17225,6 @@ class DoExpressCheckoutPaymentResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class DoUATPExpressCheckoutPaymentReq  
    extends PPXmlMessage{
 
@@ -17374,7 +17261,6 @@ class DoUATPExpressCheckoutPaymentReq
 /**
  * 
  */
- 
 class DoUATPExpressCheckoutPaymentRequestType  extends DoExpressCheckoutPaymentRequestType  
   {
 
@@ -17387,7 +17273,6 @@ class DoUATPExpressCheckoutPaymentRequestType  extends DoExpressCheckoutPaymentR
 /**
  * 
  */
- 
 class DoUATPExpressCheckoutPaymentResponseType  extends DoExpressCheckoutPaymentResponseType  
   {
 
@@ -17410,7 +17295,6 @@ class DoUATPExpressCheckoutPaymentResponseType  extends DoExpressCheckoutPayment
 /**
  * 
  */
- 
 class ManagePendingTransactionStatusReq  
    extends PPXmlMessage{
 
@@ -17447,7 +17331,6 @@ class ManagePendingTransactionStatusReq
 /**
  * 
  */
- 
 class ManagePendingTransactionStatusRequestType  extends AbstractRequestType  
   {
 
@@ -17490,7 +17373,6 @@ class ManagePendingTransactionStatusRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class ManagePendingTransactionStatusResponseType  extends AbstractResponseType  
   {
 
@@ -17524,7 +17406,6 @@ class ManagePendingTransactionStatusResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class DoDirectPaymentReq  
    extends PPXmlMessage{
 
@@ -17562,7 +17443,6 @@ class DoDirectPaymentReq
  * This flag indicates that the response should include
  * FMFDetails 
  */
- 
 class DoDirectPaymentRequestType  extends AbstractRequestType  
   {
 
@@ -17606,7 +17486,6 @@ class DoDirectPaymentRequestType  extends AbstractRequestType
  * The amount of the payment as specified by you on
  * DoDirectPaymentRequest.
  */
- 
 class DoDirectPaymentResponseType  extends AbstractResponseType  
   {
 
@@ -17738,7 +17617,6 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class DoCancelReq  
    extends PPXmlMessage{
 
@@ -17775,7 +17653,6 @@ class DoCancelReq
 /**
  * Msg Sub Id that was used for the orginal operation. 
  */
- 
 class DoCancelRequestType  extends AbstractRequestType  
   {
 
@@ -17831,7 +17708,6 @@ class DoCancelRequestType  extends AbstractRequestType
 /**
  * Return msgsubid back to merchant 
  */
- 
 class DoCancelResponseType  extends AbstractResponseType  
   {
 
@@ -17854,7 +17730,6 @@ class DoCancelResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class DoCaptureReq  
    extends PPXmlMessage{
 
@@ -17893,7 +17768,6 @@ class DoCaptureReq
  * want to capture. Required Character length and limits: 19
  * single-byte characters maximum 
  */
- 
 class DoCaptureRequestType  extends AbstractRequestType  
   {
 
@@ -18037,7 +17911,6 @@ class DoCaptureRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class DoCaptureResponseType  extends AbstractResponseType  
   {
 
@@ -18060,7 +17933,6 @@ class DoCaptureResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class DoReauthorizationReq  
    extends PPXmlMessage{
 
@@ -18102,7 +17974,6 @@ class DoReauthorizationReq
  * GetTransactionDetailsResponse. Required Character length and
  * limits: 19 single-byte characters maximum 
  */
- 
 class DoReauthorizationRequestType  extends AbstractRequestType  
   {
 
@@ -18167,7 +18038,6 @@ class DoReauthorizationRequestType  extends AbstractRequestType
  * A new authorization identification number. Character length
  * and limits: 19 single-byte characters 
  */
- 
 class DoReauthorizationResponseType  extends AbstractResponseType  
   {
 
@@ -18213,7 +18083,6 @@ class DoReauthorizationResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class DoVoidReq  
    extends PPXmlMessage{
 
@@ -18255,7 +18124,6 @@ class DoVoidReq
  * Required Character length and limits: 19 single-byte
  * characters 
  */
- 
 class DoVoidRequestType  extends AbstractRequestType  
   {
 
@@ -18320,7 +18188,6 @@ class DoVoidRequestType  extends AbstractRequestType
  * request. Character length and limits: 19 single-byte
  * characters 
  */
- 
 class DoVoidResponseType  extends AbstractResponseType  
   {
 
@@ -18356,7 +18223,6 @@ class DoVoidResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class DoAuthorizationReq  
    extends PPXmlMessage{
 
@@ -18395,7 +18261,6 @@ class DoAuthorizationReq
  * returned by a PayPal product. Required Character length and
  * limits: 19 single-byte characters maximum 
  */
- 
 class DoAuthorizationRequestType  extends AbstractRequestType  
   {
 
@@ -18470,7 +18335,6 @@ class DoAuthorizationRequestType  extends AbstractRequestType
  * An authorization identification number. Character length and
  * limits: 19 single-byte characters 
  */
- 
 class DoAuthorizationResponseType  extends AbstractResponseType  
   {
 
@@ -18527,7 +18391,6 @@ class DoAuthorizationResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class DoUATPAuthorizationReq  
    extends PPXmlMessage{
 
@@ -18564,7 +18427,6 @@ class DoUATPAuthorizationReq
 /**
  * UATP card details Required 
  */
- 
 class DoUATPAuthorizationRequestType  extends AbstractRequestType  
   {
 
@@ -18647,7 +18509,6 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType
 /**
  * Auth Authorization Code. 
  */
- 
 class DoUATPAuthorizationResponseType  extends DoAuthorizationResponseType  
   {
 
@@ -18705,7 +18566,6 @@ class DoUATPAuthorizationResponseType  extends DoAuthorizationResponseType
 /**
  * 
  */
- 
 class CreateMobilePaymentReq  
    extends PPXmlMessage{
 
@@ -18742,7 +18602,6 @@ class CreateMobilePaymentReq
 /**
  * 
  */
- 
 class CreateMobilePaymentRequestType  extends AbstractRequestType  
   {
 
@@ -18773,7 +18632,6 @@ class CreateMobilePaymentRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class CreateMobilePaymentResponseType  extends AbstractResponseType  
   {
 
@@ -18785,7 +18643,6 @@ class CreateMobilePaymentResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class GetMobileStatusReq  
    extends PPXmlMessage{
 
@@ -18822,7 +18679,6 @@ class GetMobileStatusReq
 /**
  * 
  */
- 
 class GetMobileStatusRequestType  extends AbstractRequestType  
   {
 
@@ -18854,7 +18710,6 @@ class GetMobileStatusRequestType  extends AbstractRequestType
  * Indicates whether the phone is activated for mobile payments
  * 
  */
- 
 class GetMobileStatusResponseType  extends AbstractResponseType  
   {
 
@@ -18889,7 +18744,6 @@ class GetMobileStatusResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class SetMobileCheckoutReq  
    extends PPXmlMessage{
 
@@ -18926,7 +18780,6 @@ class SetMobileCheckoutReq
 /**
  * 
  */
- 
 class SetMobileCheckoutRequestType  extends AbstractRequestType  
   {
 
@@ -18960,7 +18813,6 @@ class SetMobileCheckoutRequestType  extends AbstractRequestType
  * expires after three hours. Character length and limitations:
  * 20 single-byte characters
  */
- 
 class SetMobileCheckoutResponseType  extends AbstractResponseType  
   {
 
@@ -18986,7 +18838,6 @@ class SetMobileCheckoutResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class DoMobileCheckoutPaymentReq  
    extends PPXmlMessage{
 
@@ -19025,7 +18876,6 @@ class DoMobileCheckoutPaymentReq
  * SetMobileCheckoutResponse. RequiredCharacter length and
  * limitations: 20 single-byte characters
  */
- 
 class DoMobileCheckoutPaymentRequestType  extends AbstractRequestType  
   {
 
@@ -19058,7 +18908,6 @@ class DoMobileCheckoutPaymentRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class DoMobileCheckoutPaymentResponseType  extends AbstractResponseType  
   {
 
@@ -19081,7 +18930,6 @@ class DoMobileCheckoutPaymentResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class GetBalanceReq  
    extends PPXmlMessage{
 
@@ -19118,7 +18966,6 @@ class GetBalanceReq
 /**
  * 
  */
- 
 class GetBalanceRequestType  extends AbstractRequestType  
   {
 
@@ -19142,7 +18989,6 @@ class GetBalanceRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class GetBalanceResponseType  extends AbstractResponseType  
   {
 
@@ -19188,7 +19034,6 @@ class GetBalanceResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class SetCustomerBillingAgreementReq  
    extends PPXmlMessage{
 
@@ -19225,7 +19070,6 @@ class SetCustomerBillingAgreementReq
 /**
  * 
  */
- 
 class SetCustomerBillingAgreementRequestType  extends AbstractRequestType  
   {
 
@@ -19256,7 +19100,6 @@ class SetCustomerBillingAgreementRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class SetCustomerBillingAgreementResponseType  extends AbstractResponseType  
   {
 
@@ -19279,7 +19122,6 @@ class SetCustomerBillingAgreementResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class GetBillingAgreementCustomerDetailsReq  
    extends PPXmlMessage{
 
@@ -19316,7 +19158,6 @@ class GetBillingAgreementCustomerDetailsReq
 /**
  * 
  */
- 
 class GetBillingAgreementCustomerDetailsRequestType  extends AbstractRequestType  
   {
 
@@ -19347,7 +19188,6 @@ class GetBillingAgreementCustomerDetailsRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class GetBillingAgreementCustomerDetailsResponseType  extends AbstractResponseType  
   {
 
@@ -19370,7 +19210,6 @@ class GetBillingAgreementCustomerDetailsResponseType  extends AbstractResponseTy
 /**
  * 
  */
- 
 class CreateBillingAgreementReq  
    extends PPXmlMessage{
 
@@ -19407,7 +19246,6 @@ class CreateBillingAgreementReq
 /**
  * 
  */
- 
 class CreateBillingAgreementRequestType  extends AbstractRequestType  
   {
 
@@ -19438,7 +19276,6 @@ class CreateBillingAgreementRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class CreateBillingAgreementResponseType  extends AbstractResponseType  
   {
 
@@ -19461,7 +19298,6 @@ class CreateBillingAgreementResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class DoReferenceTransactionReq  
    extends PPXmlMessage{
 
@@ -19499,7 +19335,6 @@ class DoReferenceTransactionReq
  * This flag indicates that the response should include
  * FMFDetails 
  */
- 
 class DoReferenceTransactionRequestType  extends AbstractRequestType  
   {
 
@@ -19542,7 +19377,6 @@ class DoReferenceTransactionRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class DoReferenceTransactionResponseType  extends AbstractResponseType  
   {
 
@@ -19576,7 +19410,6 @@ class DoReferenceTransactionResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class DoNonReferencedCreditReq  
    extends PPXmlMessage{
 
@@ -19613,7 +19446,6 @@ class DoNonReferencedCreditReq
 /**
  * 
  */
- 
 class DoNonReferencedCreditRequestType  extends AbstractRequestType  
   {
 
@@ -19644,7 +19476,6 @@ class DoNonReferencedCreditRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class DoNonReferencedCreditResponseType  extends AbstractResponseType  
   {
 
@@ -19667,7 +19498,6 @@ class DoNonReferencedCreditResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class CreateRecurringPaymentsProfileReq  
    extends PPXmlMessage{
 
@@ -19704,7 +19534,6 @@ class CreateRecurringPaymentsProfileReq
 /**
  * 
  */
- 
 class CreateRecurringPaymentsProfileRequestType  extends AbstractRequestType  
   {
 
@@ -19728,7 +19557,6 @@ class CreateRecurringPaymentsProfileRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class CreateRecurringPaymentsProfileResponseType  extends AbstractResponseType  
   {
 
@@ -19751,7 +19579,6 @@ class CreateRecurringPaymentsProfileResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class GetRecurringPaymentsProfileDetailsReq  
    extends PPXmlMessage{
 
@@ -19788,7 +19615,6 @@ class GetRecurringPaymentsProfileDetailsReq
 /**
  * 
  */
- 
 class GetRecurringPaymentsProfileDetailsRequestType  extends AbstractRequestType  
   {
 
@@ -19819,7 +19645,6 @@ class GetRecurringPaymentsProfileDetailsRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class GetRecurringPaymentsProfileDetailsResponseType  extends AbstractResponseType  
   {
 
@@ -19842,7 +19667,6 @@ class GetRecurringPaymentsProfileDetailsResponseType  extends AbstractResponseTy
 /**
  * 
  */
- 
 class ManageRecurringPaymentsProfileStatusReq  
    extends PPXmlMessage{
 
@@ -19879,7 +19703,6 @@ class ManageRecurringPaymentsProfileStatusReq
 /**
  * 
  */
- 
 class ManageRecurringPaymentsProfileStatusRequestType  extends AbstractRequestType  
   {
 
@@ -19903,7 +19726,6 @@ class ManageRecurringPaymentsProfileStatusRequestType  extends AbstractRequestTy
 /**
  * 
  */
- 
 class ManageRecurringPaymentsProfileStatusResponseType  extends AbstractResponseType  
   {
 
@@ -19926,7 +19748,6 @@ class ManageRecurringPaymentsProfileStatusResponseType  extends AbstractResponse
 /**
  * 
  */
- 
 class BillOutstandingAmountReq  
    extends PPXmlMessage{
 
@@ -19963,7 +19784,6 @@ class BillOutstandingAmountReq
 /**
  * 
  */
- 
 class BillOutstandingAmountRequestType  extends AbstractRequestType  
   {
 
@@ -19987,7 +19807,6 @@ class BillOutstandingAmountRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class BillOutstandingAmountResponseType  extends AbstractResponseType  
   {
 
@@ -20010,7 +19829,6 @@ class BillOutstandingAmountResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class UpdateRecurringPaymentsProfileReq  
    extends PPXmlMessage{
 
@@ -20047,7 +19865,6 @@ class UpdateRecurringPaymentsProfileReq
 /**
  * 
  */
- 
 class UpdateRecurringPaymentsProfileRequestType  extends AbstractRequestType  
   {
 
@@ -20071,7 +19888,6 @@ class UpdateRecurringPaymentsProfileRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class UpdateRecurringPaymentsProfileResponseType  extends AbstractResponseType  
   {
 
@@ -20094,7 +19910,6 @@ class UpdateRecurringPaymentsProfileResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class GetPalDetailsReq  
    extends PPXmlMessage{
 
@@ -20131,7 +19946,6 @@ class GetPalDetailsReq
 /**
  * 
  */
- 
 class GetPalDetailsRequestType  extends AbstractRequestType  
   {
 
@@ -20144,7 +19958,6 @@ class GetPalDetailsRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class GetPalDetailsResponseType  extends AbstractResponseType  
   {
 
@@ -20178,7 +19991,6 @@ class GetPalDetailsResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class ReverseTransactionReq  
    extends PPXmlMessage{
 
@@ -20215,7 +20027,6 @@ class ReverseTransactionReq
 /**
  * 
  */
- 
 class ReverseTransactionRequestType  extends AbstractRequestType  
   {
 
@@ -20246,7 +20057,6 @@ class ReverseTransactionRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class ReverseTransactionResponseType  extends AbstractResponseType  
   {
 
@@ -20269,7 +20079,6 @@ class ReverseTransactionResponseType  extends AbstractResponseType
 /**
  * 
  */
- 
 class ExternalRememberMeOptOutReq  
    extends PPXmlMessage{
 
@@ -20310,7 +20119,6 @@ class ExternalRememberMeOptOutReq
  * login with a merchant and has meaning only to the merchant.
  * Required 
  */
- 
 class ExternalRememberMeOptOutRequestType  extends AbstractRequestType  
   {
 
@@ -20357,7 +20165,6 @@ class ExternalRememberMeOptOutRequestType  extends AbstractRequestType
 /**
  * 
  */
- 
 class ExternalRememberMeOptOutResponseType  extends AbstractResponseType  
   {
 
