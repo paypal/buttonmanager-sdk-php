@@ -1,8 +1,8 @@
 {
-    "name": "paypal/php-sdk-sample",
+    "name": "paypal/buttonmanager-sdk-sample",
     "description": "PayPal buttonmanager SDK for PHP",
     "keywords": ["paypal", "php", "sdk"],
-    "homepage": "https://x.com",
+    "homepage": "https://developer.paypal.com/",
     "license": "Apache2",
     "authors": [
         {
