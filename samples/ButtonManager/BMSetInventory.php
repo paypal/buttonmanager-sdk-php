@@ -1,7 +1,6 @@
 <?php
 require_once('../PPBootStrap.php');
 
-$logger = new PPLoggingManager('BMGetButtonDetails');
 
 $itemTrackingDetails = new ItemTrackingDetailsType();
 $itemTrackingDetails->ItemQty = $_REQUEST['itemQty'];

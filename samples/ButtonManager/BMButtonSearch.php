@@ -1,7 +1,6 @@
 <?php
 require_once('../PPBootStrap.php');
 
-$logger = new PPLoggingManager('Button Search');
 
 $buttonSearchRequest = new BMButtonSearchRequestType();
 $buttonSearchRequest->StartDate = $_REQUEST['startDate'];

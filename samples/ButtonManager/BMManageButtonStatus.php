@@ -1,7 +1,6 @@
 <?php
 require_once('../PPBootStrap.php');
 
-$logger = new PPLoggingManager('BMManageButtonStatus');
 
 $bmManageButtonStatusReqest = new BMManageButtonStatusRequestType();
 $bmManageButtonStatusReqest->HostedButtonID = $_REQUEST['hostedID'];

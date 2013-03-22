@@ -1,7 +1,6 @@
 <?php
 require_once('../PPBootStrap.php');
 
-$logger = new PPLoggingManager('Crete Button');
 
 $buttonVar = array("item_name=" . $_REQUEST['itemName'],
 					"return=" . $_REQUEST['returnURL'],

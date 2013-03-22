@@ -1,7 +1,6 @@
 \<?php
 require_once('../PPBootStrap.php');
 
-$logger = new PPLoggingManager('BMGetButtonDetails');
 
 $bmGetButtonDetailsReqest = new BMGetButtonDetailsRequestType($_REQUEST['hostedID']);
 $bmGetButtonDetailsReq = new BMGetButtonDetailsReq();

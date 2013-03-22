@@ -1,7 +1,6 @@
 <?php
 require_once('../PPBootStrap.php');
 
-$logger = new PPLoggingManager('BMGetInventory');
 
 $bmGetInventoryReqest = new BMGetInventoryRequestType($_REQUEST['hostedID']);
 $bmGetInventoryReq = new BMGetInventoryReq();
