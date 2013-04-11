@@ -1,14 +1,29 @@
 <?php
 require_once('../PPBootStrap.php');
-
+/*
+ * Use the BMManageButtonStatus API operation to change the status of a hosted button. Currently, you can only delete a button 
+ */
 
 $bmManageButtonStatusReqest = new BMManageButtonStatusRequestType();
+/*
+ * (Required) The ID of the hosted button whose status you want to change.
+ */
 $bmManageButtonStatusReqest->HostedButtonID = $_REQUEST['hostedID'];
+/*
+ *  (Required) The new status of the button. It is one of the following values:
+
+    DELETE - the button is deleted from PayPal
+
+ */
 $bmManageButtonStatusReqest->ButtonStatus = $_REQUEST['buttonStatus'];
 
 $BMManageButtonStatusReq = new BMManageButtonStatusReq();
 $BMManageButtonStatusReq->BMManageButtonStatusRequest = $bmManageButtonStatusReqest;
-
+/*
+ * 	 ## Creating service wrapper object
+Creating service wrapper object to make API call and loading
+configuration file for your credentials and endpoint
+*/
 $paypalService = new PayPalAPIInterfaceServiceService();
 try {
 	$bmManageButtonStatusResponse = $paypalService->BMManageButtonStatus($BMManageButtonStatusReq);
