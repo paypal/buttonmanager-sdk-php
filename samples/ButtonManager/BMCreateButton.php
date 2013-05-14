@@ -1,4 +1,10 @@
 <?php
+use PayPal\PayPalAPI\BMCreateButtonReq;
+use PayPal\PayPalAPI\BMCreateButtonRequestType;
+use PayPal\PayPalAPI\InstallmentDetailsType;
+use PayPal\PayPalAPI\OptionDetailsType;
+use PayPal\PayPalAPI\OptionSelectionDetailsType;
+use PayPal\Service\PayPalAPIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 
 /*

@@ -16,6 +16,12 @@
         "paypal/sdk-core-php":"v1.4.0"
     },
     "autoload": {
-        "classmap": ["lib"]
-    }
+        "psr-0": {
+            "PayPal\\Service": "lib/",
+            "PayPal\\CoreComponentTypes": "lib/",
+            "PayPal\\EBLBaseComponents": "lib/",
+            "PayPal\\EnhancedDataTypes": "lib/",
+            "PayPal\\PayPalAPI": "lib/"
+        }
+    } 
 }

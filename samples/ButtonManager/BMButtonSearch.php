@@ -1,4 +1,7 @@
 <?php
+use PayPal\PayPalAPI\BMButtonSearchReq;
+use PayPal\PayPalAPI\BMButtonSearchRequestType;
+use PayPal\Service\PayPalAPIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 
 /*

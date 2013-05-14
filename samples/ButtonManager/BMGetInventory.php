@@ -1,4 +1,7 @@
 <?php
+use PayPal\PayPalAPI\BMGetInventoryReq;
+use PayPal\PayPalAPI\BMGetInventoryRequestType;
+use PayPal\Service\PayPalAPIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 
 /*

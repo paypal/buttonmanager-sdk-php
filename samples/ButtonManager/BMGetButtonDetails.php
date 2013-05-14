@@ -1,4 +1,7 @@
-\<?php
+<?php
+use PayPal\PayPalAPI\BMGetButtonDetailsReq;
+use PayPal\PayPalAPI\BMGetButtonDetailsRequestType;
+use PayPal\Service\PayPalAPIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 
 /*

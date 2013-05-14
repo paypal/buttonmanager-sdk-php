@@ -1,4 +1,9 @@
 <?php
+use PayPal\EBLBaseComponents\ItemTrackingDetailsType;
+use PayPal\PayPalAPI\BMSetInventoryReq;
+use PayPal\PayPalAPI\BMSetInventoryRequestType;
+use PayPal\Service\PayPalAPIInterfaceServiceService;
+
 require_once('../PPBootStrap.php');
 
 /*

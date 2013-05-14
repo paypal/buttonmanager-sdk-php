@@ -1,4 +1,7 @@
 <?php
+use PayPal\PayPalAPI\BMManageButtonStatusReq;
+use PayPal\PayPalAPI\BMManageButtonStatusRequestType;
+use PayPal\Service\PayPalAPIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 /*
  * Use the BMManageButtonStatus API operation to change the status of a hosted button. Currently, you can only delete a button 
