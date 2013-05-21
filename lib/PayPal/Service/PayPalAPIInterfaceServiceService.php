@@ -28,6 +28,10 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	// SDK Version
 	protected static $SDK_VERSION = "sdkversion";
 
+    /**
+    * @param $config - Dynamic config map. This takes the higher precedence if config file is also present.
+    *
+    */
 	public function __construct($config = null) {
 		parent::__construct(self::$SERVICE_NAME, 'SOAP', array('PayPal\Handler\PPMerchantServiceHandler'), $config);
         parent::$SDK_NAME    = self::$SDK_NAME ;
@@ -46,7 +50,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically 		
-	 * @return BMCreateButtonResponseType
+	 * @return PayPalAPI\BMCreateButtonResponseType
 	 * @throws APIException
 	 */
 	public function BMCreateButton($bMCreateButtonReq, $apiCredential = NULL) {
@@ -64,7 +68,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically 		
-	 * @return BMUpdateButtonResponseType
+	 * @return PayPalAPI\BMUpdateButtonResponseType
 	 * @throws APIException
 	 */
 	public function BMUpdateButton($bMUpdateButtonReq, $apiCredential = NULL) {
@@ -82,7 +86,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically 		
-	 * @return BMManageButtonStatusResponseType
+	 * @return PayPalAPI\BMManageButtonStatusResponseType
 	 * @throws APIException
 	 */
 	public function BMManageButtonStatus($bMManageButtonStatusReq, $apiCredential = NULL) {
@@ -100,7 +104,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically 		
-	 * @return BMGetButtonDetailsResponseType
+	 * @return PayPalAPI\BMGetButtonDetailsResponseType
 	 * @throws APIException
 	 */
 	public function BMGetButtonDetails($bMGetButtonDetailsReq, $apiCredential = NULL) {
@@ -118,7 +122,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically 		
-	 * @return BMSetInventoryResponseType
+	 * @return PayPalAPI\BMSetInventoryResponseType
 	 * @throws APIException
 	 */
 	public function BMSetInventory($bMSetInventoryReq, $apiCredential = NULL) {
@@ -136,7 +140,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically 		
-	 * @return BMGetInventoryResponseType
+	 * @return PayPalAPI\BMGetInventoryResponseType
 	 * @throws APIException
 	 */
 	public function BMGetInventory($bMGetInventoryReq, $apiCredential = NULL) {
@@ -154,7 +158,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically 		
-	 * @return BMButtonSearchResponseType
+	 * @return PayPalAPI\BMButtonSearchResponseType
 	 * @throws APIException
 	 */
 	public function BMButtonSearch($bMButtonSearchReq, $apiCredential = NULL) {
