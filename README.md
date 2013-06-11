@@ -1,51 +1,54 @@
-PayPal PHP ButtonManager SDK
-===============================
 
-Prerequisites
--------------
+# PayPal PHP ButtonManager SDK
+
+## Prerequisites
 
 PayPal's PHP ButtonManager SDK requires 
 
-   * PHP 5.2 and above with curl/openssl extensions enabled
+   * PHP 5.2 and above 
+   * curl/openssl PHP extensions 
  
-Installing the SDK
-------------------
+## Running the sample
 
-   if not using composer 
+To run the bundled sample, first copy the samples folder to your web server root. You will then need to install the SDK as a dependency using either composer (PHP V5.3+ only) or by running a custom installation script provided with the SDK.
+
+
+If using composer, run `composer update` from the samples folder. Otherwise, run install.php from buttonmanager-sdk-php/samples directory
+
+```bash
    
-   Run the installation script from buttonmanager-sdk-php/samples directory
-   
-    curl  https://raw.github.com/paypal/buttonmanager-sdk-php/composer/samples/install.php | php
-    
-        or 
-        
+    cd samples
+    curl  https://raw.github.com/paypal/buttonmanager-sdk-php/stable/samples/install.php | php
+		OR
     php install.php
-    
-   if using composer (PHP V5.3+ only)
-   
-   Run the following command from the buttonmanager-sdk-php/samples directory and after the installation set the path to config file in PPBootStrap.php, config file is in vendor/paypal/buttonmanager-sdk-php/config/
-   
-    composer update
+```
 
-Using the SDK
--------------
+## Using the SDK
 
-To use the SDK, 
+To use the SDK,
 
-   * Update the sdk_config.ini with your API credentials.
-   * Require "PPBootStrap.php" in your application. [copy it from vendor/paypal/buttonmanager-sdk-php/sample/ if using composer]
-   * To run samples
-      * Copy samples in [vendor/paypal/buttonmanager-sdk-php/] to root directory and run in browser
-   * To build your own application:
-      * Instantiate a service wrapper object.
-      * Instantiate a request object as per your project's needs. All the API request and response 
-     classes are available in services\PayPalAPIInterfaceService\PayPalAPIInterfaceServiceService.php
-      * Invoke the appropriate method on the service object.
+   * Create a composer.json file with the following contents.
+```json
+{
+    "name": "me/shopping-cart-app",
+    "require": {
+        "paypal/buttonmanager-sdk-php":"v2.4.101"
+    }
+}
+```
 
+   * Install the SDK as a dependency using composer or the install.php script. 
+   * Require `vendor/autoload.php` OR `PPBootStrap.php` in your application depending on whether you used composer or the custom installer.
+   * Choose how you would like to configure the SDK - You can either
+      * Create a `sdk_config.ini` file and set the PP_CONFIG_PATH constant to point to the directory where this file exists OR
+	  * Create a hashmap containing configuration parameters and pass it to the service object.
+   * Instantiate a service wrapper object and a request object as per your project's needs.
+   * Invoke the appropriate method on the service object.
 
 For example,
 
-	 //sets config file path and loads all the classes
+```php
+	// Sets config file path and registers the classloader
     require("PPBootStrap.php");
 
 	$buttonSearchReq = new BMButtonSearchReq();
@@ -55,42 +58,47 @@ For example,
 	$paypalService = new PayPalAPIInterfaceServiceService();
 	$buttonSearchResponse = $paypalService->BMButtonSearch($buttonSearchReq);
 	
-	$ack = strtoupper($buttonSearchResponse->Ack); 
-	if($ack == 'SUCCESS') {
+	if($strtoupper($buttonSearchResponse->Ack) == 'SUCCESS') {
 		// Success
 	}
+```
 
+## Authentication
 
 The SDK provides multiple ways to authenticate your API call.
 
+```php
 	$paypalService = new PayPalAPIInterfaceServiceService();
 	
 	// Use the default account (the first account) configured in sdk_config.ini
 	$response = $paypalService->BMButtonSearch($buttonSearchReq);	
 
-	// Use a specific account configured in sdk_config.inig
+	// Use a specific account configured in sdk_config.ini
 	$response = $paypalService->BMButtonSearch($buttonSearchReq, 'jb-us-seller_api1.paypal.com');	
 	 
 	// Pass in a dynamically created API credential object
     $cred = new PPCertificateCredential("username", "password", "path-to-pem-file");
     $cred->setThirdPartyAuthorization(new PPTokenAuthorization("accessToken", "tokenSecret"));
 	$response = $paypalService->BMButtonSearch($buttonSearchReq, $cred);	
-  
+```  
  
+## SDK Configuration
 
-SDK Configuration
------------------
 
-The SDK allows you to configure 
+The SDK allows you to configure the following parameters - 
 
+   * Integration mode (sandbox / live)
    * (Multiple) API account credentials.
-   * HTTP connection parameters 
-   * Logging
+   * HTTP connection parameters
+   * Logging 
 
-You can do this via
-
-   * the `sdk_config.ini` file - You must define a _PP_CONFIG_PATH_ constant pointing to the absolute path where your configuration file resides, OR
-   * a dynamic hashmap containing entries in the same format as the ini config file that you pass in to the service object
+You can configure the SDK via the sdk_config.ini file.
+  
+```php
+    define('PP_CONFIG_PATH', '/directory/that/contains/sdk_config.ini');
+    $service  = new PayPalAPIInterfaceServiceService();
+```
+Alternatively, dynamic configuration values can be set by passing a map of credential and config values (if config map is passed the config file is ignored)
 ```php
     $config = array(
        'mode' => 'sandbox',
@@ -101,22 +109,13 @@ You can do this via
     $service  = new PayPalAPIInterfaceServiceService($config); 
 ```
 
-Please refer to the sample config file provided with this bundle.
+Please refer to the sample config file provided with this bundle for more.
 
-Using multiple SDKs together
-----------------------------
+## Instant Payment Notification (IPN)
 
-   * Just add the required sdk names to 'required' section of your composer.json file.
+Please refer to the IPN-README in 'samples/IPN' directory
 
-
-Instant Payment Notification (IPN)
------------------------------------
-
-refer to the IPN-README in 'samples/IPN' directory
-
-Links
------
+## Links
 
    * API Reference - https://developer.paypal.com/webapps/developer/docs/classic/api/#bm
    * If you need help using the SDK, a new feature that you need or have a issue to report, please visit https://github.com/paypal/buttonmanager-sdk-php/issues 
-
