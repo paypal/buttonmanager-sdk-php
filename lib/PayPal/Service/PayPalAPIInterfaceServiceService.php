@@ -23,10 +23,10 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	private static $SERVICE_NAME = "PayPalAPIInterfaceService";
 
     // SDK Name
-	protected static $SDK_NAME = "sdkname";
+	protected static $SDK_NAME = "buttonmanager-php-sdk";
 	
 	// SDK Version
-	protected static $SDK_VERSION = "sdkversion";
+	protected static $SDK_VERSION = "3.5.103";
 
     /**
     * @param $config - Dynamic config map. This takes the higher precedence if config file is also present.
