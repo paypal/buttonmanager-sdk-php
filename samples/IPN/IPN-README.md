@@ -17,8 +17,14 @@ IPN How to use
 * include 'ipn/PPIPNMessage.php' in your IPN callback URL  
 * 'validate()' method validates the IPM message and returns true if 'VERIFIED' or returns false if 'INVALID'  
 Ex:
-
-		$ipnMessage = new PPIPNMessage();   
+		// Array containing credentials and confiuration parameters. (not required if config file is used)
+	    $config = array(
+	       'mode' => 'sandbox',
+	       'acct1.UserName' => 'jb-us-seller_api1.paypal.com',
+	       'acct1.Password' => 'WX4WTU3S8MY44S7F'
+	       .....
+	    );   
+		$ipnMessage = new PPIPNMessage(null, $config);  
 		$result = $ipnMessage->validate();
 		  
   Intiating IPN:
