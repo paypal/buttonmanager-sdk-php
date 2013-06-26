@@ -116,8 +116,6 @@ Alternatively, credential and configuration can be loaded from a file. refer <ht
     $service  = new PayPalAPIInterfaceServiceService();
 ```
 
-Please refer to the sample config file provided with this bundle for more.
-
 ## Instant Payment Notification (IPN)
 
 Please refer to the IPN-README in 'samples/IPN' directory
