@@ -7,7 +7,7 @@
 				"acct1.Password" => "WX4WTU3S8MY44S7F",
 				"acct1.Signature" => "AFcWxV21C7fd0v3bYYYRCpSSRl31A7yDhhsPUU2XhtMoZXsWHFxu-RWy",
 				// AppId required if permission APIs are used
-				"acct1.AppId" => "APP-80W284485P519543T",
+				//"acct1.AppId" => "APP-80W284485P519543T",
 				// Subject is optional and is required only in case of third party authorization
 				//"acct1.Subject" => "",
 				// values: 'sandbox' for testing
