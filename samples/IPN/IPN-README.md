@@ -1,6 +1,5 @@
 IPN Overview :
 ------------
-
 * PayPal Instant Payment Notification is call back system that initiated once a tranction is completed  
   (eg: When BMCreateButton completed successfully).
 * you will receive the transaction related IPN variables on your call back url that you have specified in your request.
@@ -31,7 +30,7 @@ Ex:
 		$result = $ipnMessage->validate();
 		  
   Intiating IPN:
-* Make an PayPal API call (eg: BMCreateButton request), setting the NotifyURL field of API request   
+* Make an PayPal API call (eg: BMCreateButton request), setting the 'notify_url' button variable of API request   
   to the url of deployed IPNLIstener sample(eg:https://example.com/buttonmanager-sdk-sample/IPN/IPNListener.php)  
 * You will receive IPN call back from PayPal , which will be logged in to log file in case of IPN sample.
 * See the included sample for more details.
