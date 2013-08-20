@@ -116,6 +116,8 @@ Alternatively, credential and configuration can be loaded from a file. refer <ht
     $service  = new PayPalAPIInterfaceServiceService();
 ```
 
+You can refer full list of configuration parameters in [wiki](https://github.com/paypal/sdk-core-php/wiki/Configuring-the-SDK) page.
+
 ## Instant Payment Notification (IPN)
 
 Please refer to the IPN-README in 'samples/IPN' directory
