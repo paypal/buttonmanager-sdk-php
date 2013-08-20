@@ -22,9 +22,9 @@ $BMManageButtonStatusReq->BMManageButtonStatusRequest = $bmManageButtonStatusReq
 /*
  * 	 ## Creating service wrapper object
 Creating service wrapper object to make API call and loading
-configuration file for your credentials and endpoint
+Configuration::getSignatureConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService();
+$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getSignatureConfig());
 try {
 	$bmManageButtonStatusResponse = $paypalService->BMManageButtonStatus($BMManageButtonStatusReq);
 } catch (Exception $ex) {
