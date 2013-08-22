@@ -13,9 +13,9 @@ $bmGetInventoryReq = new BMGetInventoryReq();
 $bmGetInventoryReq->BMGetInventoryRequest = $bmGetInventoryReqest;
 
 /*
- * Configuration::getSignatureConfig() returns array that contains credential and config parameters
+ * Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getSignatureConfig());
+$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
 try {
 	$bmGetInventoryResponse = $paypalService->BMGetInventory($bmGetInventoryReq);
 } catch (Exception $ex) {
