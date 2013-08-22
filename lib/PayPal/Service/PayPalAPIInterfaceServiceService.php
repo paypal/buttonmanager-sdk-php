@@ -10,6 +10,7 @@ use PayPal\PayPalAPI\BMGetButtonDetailsResponseType;
 use PayPal\PayPalAPI\BMSetInventoryResponseType;
 use PayPal\PayPalAPI\BMGetInventoryResponseType;
 use PayPal\PayPalAPI\BMButtonSearchResponseType;
+use PayPal\PayPalAPI\UpdateAuthorizationResponseType;
 
 /**
  * AUTO GENERATED code for PayPalAPIInterfaceService
@@ -17,7 +18,7 @@ use PayPal\PayPalAPI\BMButtonSearchResponseType;
 class PayPalAPIInterfaceServiceService extends PPBaseService {
 
 	// Service Version
-	private static $SERVICE_VERSION = "98.0";
+	private static $SERVICE_VERSION = "106.0";
 
 	// Service Name
 	private static $SERVICE_NAME = "PayPalAPIInterfaceService";
@@ -26,7 +27,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	protected static $SDK_NAME = "buttonmanager-php-sdk";
 	
 	// SDK Version
-	protected static $SDK_VERSION = "3.5.103";
+	protected static $SDK_VERSION = "3.6.106";
 
     /**
     * @param $config - Dynamic config map. This takes the higher precedence if config file is also present.
@@ -165,6 +166,24 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 		$this->setStandardParams($bMButtonSearchReq->BMButtonSearchRequest);
 		$ret = new BMButtonSearchResponseType();
 		$resp = $this->call('PayPalAPI', 'BMButtonSearch', $bMButtonSearchReq, $apiCredential);
+		$ret->init(PPUtils::xmlToArray($resp));
+		return $ret;
+	}
+	 
+
+	/**
+	 * Service Call: UpdateAuthorization
+	 * @param UpdateAuthorizationReq $updateAuthorizationReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
+	 * @return PayPalAPI\UpdateAuthorizationResponseType
+	 * @throws APIException
+	 */
+	public function UpdateAuthorization($updateAuthorizationReq, $apiCredential = NULL) {
+		$this->setStandardParams($updateAuthorizationReq->UpdateAuthorizationRequest);
+		$ret = new UpdateAuthorizationResponseType();
+		$resp = $this->call('PayPalAPIAA', 'UpdateAuthorization', $updateAuthorizationReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
