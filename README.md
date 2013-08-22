@@ -1,4 +1,3 @@
-
 # PayPal PHP ButtonManager SDK
 
 ## Prerequisites
@@ -32,7 +31,7 @@ To use the SDK,
 {
     "name": "me/shopping-cart-app",
     "require": {
-        "paypal/buttonmanager-sdk-php":"v2.4.103"
+        "paypal/buttonmanager-sdk-php":"v2.5.106"
     }
 }
 ```
