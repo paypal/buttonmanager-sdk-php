@@ -12,7 +12,10 @@ $bmGetInventoryReqest = new BMGetInventoryRequestType($_REQUEST['hostedID']);
 $bmGetInventoryReq = new BMGetInventoryReq();
 $bmGetInventoryReq->BMGetInventoryRequest = $bmGetInventoryReqest;
 
-$paypalService = new PayPalAPIInterfaceServiceService();
+/*
+ * Configuration::getAcctAndConfig() returns array that contains credential and config parameters
+*/
+$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
 try {
 	$bmGetInventoryResponse = $paypalService->BMGetInventory($bmGetInventoryReq);
 } catch (Exception $ex) {
