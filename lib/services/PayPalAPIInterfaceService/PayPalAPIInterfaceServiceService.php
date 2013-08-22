@@ -6,7 +6,7 @@
 class PayPalAPIInterfaceServiceService extends PPBaseService {
 
 	// Service Version
-	private static $SERVICE_VERSION = "98.0";
+	private static $SERVICE_VERSION = "106.0";
 
 	// Service Name
 	private static $SERVICE_NAME = "PayPalAPIInterfaceService";
@@ -15,7 +15,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	protected static $SDK_NAME = "buttonmanager-php-sdk";
 	
 	// SDK Version
-	protected static $SDK_VERSION = "2.4.103";
+	protected static $SDK_VERSION = "2.5.106";
 
 	public function __construct($config = null) {
 		parent::__construct(self::$SERVICE_NAME, 'SOAP', array('PPMerchantServiceHandler'), $config);
