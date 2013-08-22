@@ -23,7 +23,7 @@ To use the SDK,
 {
     "name": "me/shopping-cart-app",
     "require": {
-        "paypal/buttonmanager-sdk-php":"v3.4.103"
+        "paypal/buttonmanager-sdk-php":"v3.6.106"
     }
 }
 ```
