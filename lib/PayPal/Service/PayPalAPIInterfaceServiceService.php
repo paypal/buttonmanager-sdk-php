@@ -1,8 +1,10 @@
 <?php 
 namespace PayPal\Service;
+use PayPal\Common\PPApiContext;
 use PayPal\Core\PPMessage;
 use PayPal\Core\PPBaseService;
 use PayPal\Core\PPUtils;
+use PayPal\Handler\PPMerchantServiceHandler;
 use PayPal\PayPalAPI\BMCreateButtonResponseType;
 use PayPal\PayPalAPI\BMUpdateButtonResponseType;
 use PayPal\PayPalAPI\BMManageButtonStatusResponseType;
@@ -34,9 +36,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
     *
     */
 	public function __construct($config = null) {
-		parent::__construct(self::$SERVICE_NAME, 'SOAP', array('PayPal\Handler\PPMerchantServiceHandler'), $config);
-        parent::$SDK_NAME    = self::$SDK_NAME ;
-        parent::$SDK_VERSION = self::$SDK_VERSION;
+		parent::__construct(self::$SERVICE_NAME, 'SOAP', $config);
 	}
 
 	private function setStandardParams($request) {
@@ -57,7 +57,11 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function BMCreateButton($bMCreateButtonReq, $apiCredential = NULL) {
 		$this->setStandardParams($bMCreateButtonReq->BMCreateButtonRequest);
 		$ret = new BMCreateButtonResponseType();
-		$resp = $this->call('PayPalAPI', 'BMCreateButton', $bMCreateButtonReq, $apiCredential);
+		$apiContext = new PPApiContext($this->config);
+        $handlers = array(
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+        );
+		$resp = $this->call('PayPalAPI', 'BMCreateButton', $bMCreateButtonReq, $apiContext, $handlers);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -75,7 +79,11 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function BMUpdateButton($bMUpdateButtonReq, $apiCredential = NULL) {
 		$this->setStandardParams($bMUpdateButtonReq->BMUpdateButtonRequest);
 		$ret = new BMUpdateButtonResponseType();
-		$resp = $this->call('PayPalAPI', 'BMUpdateButton', $bMUpdateButtonReq, $apiCredential);
+		$apiContext = new PPApiContext($this->config);
+        $handlers = array(
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+        );
+		$resp = $this->call('PayPalAPI', 'BMUpdateButton', $bMUpdateButtonReq, $apiContext, $handlers);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -93,7 +101,11 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function BMManageButtonStatus($bMManageButtonStatusReq, $apiCredential = NULL) {
 		$this->setStandardParams($bMManageButtonStatusReq->BMManageButtonStatusRequest);
 		$ret = new BMManageButtonStatusResponseType();
-		$resp = $this->call('PayPalAPI', 'BMManageButtonStatus', $bMManageButtonStatusReq, $apiCredential);
+		$apiContext = new PPApiContext($this->config);
+        $handlers = array(
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+        );
+		$resp = $this->call('PayPalAPI', 'BMManageButtonStatus', $bMManageButtonStatusReq, $apiContext, $handlers);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -111,7 +123,11 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function BMGetButtonDetails($bMGetButtonDetailsReq, $apiCredential = NULL) {
 		$this->setStandardParams($bMGetButtonDetailsReq->BMGetButtonDetailsRequest);
 		$ret = new BMGetButtonDetailsResponseType();
-		$resp = $this->call('PayPalAPI', 'BMGetButtonDetails', $bMGetButtonDetailsReq, $apiCredential);
+		$apiContext = new PPApiContext($this->config);
+        $handlers = array(
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+        );
+		$resp = $this->call('PayPalAPI', 'BMGetButtonDetails', $bMGetButtonDetailsReq, $apiContext, $handlers);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -129,7 +145,11 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function BMSetInventory($bMSetInventoryReq, $apiCredential = NULL) {
 		$this->setStandardParams($bMSetInventoryReq->BMSetInventoryRequest);
 		$ret = new BMSetInventoryResponseType();
-		$resp = $this->call('PayPalAPI', 'BMSetInventory', $bMSetInventoryReq, $apiCredential);
+		$apiContext = new PPApiContext($this->config);
+        $handlers = array(
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+        );
+		$resp = $this->call('PayPalAPI', 'BMSetInventory', $bMSetInventoryReq, $apiContext, $handlers);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -147,7 +167,11 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function BMGetInventory($bMGetInventoryReq, $apiCredential = NULL) {
 		$this->setStandardParams($bMGetInventoryReq->BMGetInventoryRequest);
 		$ret = new BMGetInventoryResponseType();
-		$resp = $this->call('PayPalAPI', 'BMGetInventory', $bMGetInventoryReq, $apiCredential);
+		$apiContext = new PPApiContext($this->config);
+        $handlers = array(
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+        );
+		$resp = $this->call('PayPalAPI', 'BMGetInventory', $bMGetInventoryReq, $apiContext, $handlers);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -165,7 +189,11 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function BMButtonSearch($bMButtonSearchReq, $apiCredential = NULL) {
 		$this->setStandardParams($bMButtonSearchReq->BMButtonSearchRequest);
 		$ret = new BMButtonSearchResponseType();
-		$resp = $this->call('PayPalAPI', 'BMButtonSearch', $bMButtonSearchReq, $apiCredential);
+		$apiContext = new PPApiContext($this->config);
+        $handlers = array(
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+        );
+		$resp = $this->call('PayPalAPI', 'BMButtonSearch', $bMButtonSearchReq, $apiContext, $handlers);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -183,7 +211,11 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function UpdateAuthorization($updateAuthorizationReq, $apiCredential = NULL) {
 		$this->setStandardParams($updateAuthorizationReq->UpdateAuthorizationRequest);
 		$ret = new UpdateAuthorizationResponseType();
-		$resp = $this->call('PayPalAPIAA', 'UpdateAuthorization', $updateAuthorizationReq, $apiCredential);
+		$apiContext = new PPApiContext($this->config);
+        $handlers = array(
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+        );
+		$resp = $this->call('PayPalAPIAA', 'UpdateAuthorization', $updateAuthorizationReq, $apiContext, $handlers);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
