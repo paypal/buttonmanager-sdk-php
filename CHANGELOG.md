@@ -1,5 +1,11 @@
 ### CHANGELOG
 
+## Version 2.6.106 - October 27, 2014
+
+   - Updated SDK Core v1.5.*
+
+You can see source code of this release in github under https://github.com/paypal/buttonmanager-sdk-php/tree/v2.6.106.
+
 ## Version 2.5.106 - August 22, 2013
  
    - Updated stubs.
