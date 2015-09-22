@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace PayPal\Service;
 use PayPal\Common\PPApiContext;
 use PayPal\Core\PPMessage;
@@ -27,9 +27,9 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 
     // SDK Name
 	protected static $SDK_NAME = "buttonmanager-php-sdk";
-	
+
 	// SDK Version
-	protected static $SDK_VERSION = "3.6.107";
+	protected static $SDK_VERSION = "3.9.0";
 
     /**
     * @param $config - Dynamic config map. This takes the higher precedence if config file is also present.
@@ -50,7 +50,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param BMCreateButtonReq $bMCreateButtonReq
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
-	 *      created dynamically 		
+	 *      created dynamically
 	 * @return PayPalAPI\BMCreateButtonResponseType
 	 * @throws APIException
 	 */
@@ -65,14 +65,14 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
-	 
+
 
 	/**
 	 * Service Call: BMUpdateButton
 	 * @param BMUpdateButtonReq $bMUpdateButtonReq
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
-	 *      created dynamically 		
+	 *      created dynamically
 	 * @return PayPalAPI\BMUpdateButtonResponseType
 	 * @throws APIException
 	 */
@@ -87,14 +87,14 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
-	 
+
 
 	/**
 	 * Service Call: BMManageButtonStatus
 	 * @param BMManageButtonStatusReq $bMManageButtonStatusReq
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
-	 *      created dynamically 		
+	 *      created dynamically
 	 * @return PayPalAPI\BMManageButtonStatusResponseType
 	 * @throws APIException
 	 */
@@ -109,14 +109,14 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
-	 
+
 
 	/**
 	 * Service Call: BMGetButtonDetails
 	 * @param BMGetButtonDetailsReq $bMGetButtonDetailsReq
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
-	 *      created dynamically 		
+	 *      created dynamically
 	 * @return PayPalAPI\BMGetButtonDetailsResponseType
 	 * @throws APIException
 	 */
@@ -131,14 +131,14 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
-	 
+
 
 	/**
 	 * Service Call: BMSetInventory
 	 * @param BMSetInventoryReq $bMSetInventoryReq
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
-	 *      created dynamically 		
+	 *      created dynamically
 	 * @return PayPalAPI\BMSetInventoryResponseType
 	 * @throws APIException
 	 */
@@ -153,14 +153,14 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
-	 
+
 
 	/**
 	 * Service Call: BMGetInventory
 	 * @param BMGetInventoryReq $bMGetInventoryReq
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
-	 *      created dynamically 		
+	 *      created dynamically
 	 * @return PayPalAPI\BMGetInventoryResponseType
 	 * @throws APIException
 	 */
@@ -175,14 +175,14 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
-	 
+
 
 	/**
 	 * Service Call: BMButtonSearch
 	 * @param BMButtonSearchReq $bMButtonSearchReq
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
-	 *      created dynamically 		
+	 *      created dynamically
 	 * @return PayPalAPI\BMButtonSearchResponseType
 	 * @throws APIException
 	 */
@@ -197,14 +197,14 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
-	 
+
 
 	/**
 	 * Service Call: UpdateAuthorization
 	 * @param UpdateAuthorizationReq $updateAuthorizationReq
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
-	 *      created dynamically 		
+	 *      created dynamically
 	 * @return PayPalAPI\UpdateAuthorizationResponseType
 	 * @throws APIException
 	 */
@@ -219,5 +219,5 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
-	 
+
 }
