@@ -80,7 +80,8 @@ For example,
 	$config = array(
        'mode' => 'sandbox',
        'acct1.UserName' => 'jb-us-seller_api1.paypal.com',
-       'acct1.Password' => 'WX4WTU3S8MY44S7F'
+       'acct1.Password' => 'WX4WTU3S8MY44S7F',
+       "acct1.Signature" => "AFcWxV21C7fd0v3bYYYRCpSSRl31A7yDhhsPUU2XhtMoZXsWHFxu-RWy"
        .....
     );
 
