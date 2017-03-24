@@ -15,9 +15,9 @@ use PayPal\PayPalAPI\BMButtonSearchResponseType;
 use PayPal\PayPalAPI\UpdateAuthorizationResponseType;
 
 /**
- * AUTO GENERATED code for PayPalAPIInterfaceService
+ * AUTO GENERATED code for ButtonManager
  */
-class PayPalAPIInterfaceServiceService extends PPBaseService {
+class ButtonManagerService extends PPBaseService {
 
 	// Service Version
 	private static $SERVICE_VERSION = "106.0";

@@ -4,7 +4,7 @@ use PayPal\PayPalAPI\BMCreateButtonRequestType;
 use PayPal\PayPalAPI\InstallmentDetailsType;
 use PayPal\PayPalAPI\OptionDetailsType;
 use PayPal\PayPalAPI\OptionSelectionDetailsType;
-use PayPal\Service\PayPalAPIInterfaceServiceService;
+use PayPal\Service\ButtonManagerService;
 require_once('../PPBootStrap.php');
 
 /*
@@ -166,7 +166,7 @@ $createButtonReq->BMCreateButtonRequest = $createButtonRequest;
 Creating service wrapper object to make API call and loading
 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+$paypalService = new ButtonManagerService(Configuration::getAcctAndConfig());
 try {
 	$createButtonResponse = $paypalService->BMCreateButton($createButtonReq);
 } catch (Exception $ex) {

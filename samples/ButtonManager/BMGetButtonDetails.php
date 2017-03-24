@@ -1,7 +1,7 @@
 <?php
 use PayPal\PayPalAPI\BMGetButtonDetailsReq;
 use PayPal\PayPalAPI\BMGetButtonDetailsRequestType;
-use PayPal\Service\PayPalAPIInterfaceServiceService;
+use PayPal\Service\ButtonManagerService;
 require_once('../PPBootStrap.php');
 
 /*
@@ -20,7 +20,7 @@ $bmGetButtonDetailsReq->BMGetButtonDetailsRequest = $bmGetButtonDetailsReqest;
 Creating service wrapper object to make API call and loading
 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+$paypalService = new ButtonManagerService(Configuration::getAcctAndConfig());
 try {
 	$bmGetButtonDetailsResponse = $paypalService->BMGetButtonDetails($bmGetButtonDetailsReq);
 } catch (Exception $ex) {

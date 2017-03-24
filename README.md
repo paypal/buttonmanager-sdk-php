@@ -89,8 +89,8 @@ For example,
 	$buttonSearchReq->BMButtonSearchRequest = new BMButtonSearchRequestType();
 	......
 
-	$paypalService = new PayPalAPIInterfaceServiceService($config);
-	$buttonSearchResponse = $paypalService->BMButtonSearch($buttonSearchReq);
+	$buttonManagerService = new ButtonManagerService($config);
+	$buttonSearchResponse = $buttonManagerService->BMButtonSearch($buttonSearchReq);
 	
 	if($strtoupper($buttonSearchResponse->Ack) == 'SUCCESS') {
 		// Success
@@ -102,7 +102,7 @@ For example,
 The SDK provides multiple ways to authenticate your API call.
 
 ```php
-	$paypalService = new PayPalAPIInterfaceServiceService($config);
+	$buttonManagerService = new ButtonManagerService($config);
 	
 	// Use the default account (the first account) configured in sdk_config.ini
 	$response = $paypalService->BMButtonSearch($buttonSearchReq);	

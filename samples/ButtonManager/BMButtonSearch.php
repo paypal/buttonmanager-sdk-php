@@ -1,7 +1,7 @@
 <?php
 use PayPal\PayPalAPI\BMButtonSearchReq;
 use PayPal\PayPalAPI\BMButtonSearchRequestType;
-use PayPal\Service\PayPalAPIInterfaceServiceService;
+use PayPal\Service\ButtonManagerService;
 require_once('../PPBootStrap.php');
 
 /*
@@ -25,7 +25,7 @@ $buttonSearchReq->BMButtonSearchRequest = $buttonSearchRequest;
 Creating service wrapper object to make API call and loading
 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+$paypalService = new ButtonManagerService(Configuration::getAcctAndConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$buttonSearchResponse = $paypalService->BMButtonSearch($buttonSearchReq);
