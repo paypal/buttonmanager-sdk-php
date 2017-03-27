@@ -1,5 +1,9 @@
 ### CHANGELOG
 
+####Version 4.0.0 - Mar 27, 2017
+   - Renamed `PayPalAPIInterfaceServiceService` to `ButtonManagerService`.
+   
+
 ####Version 3.9.0 - Sep 22, 2015
    - Updated IPN Endpoint
 
