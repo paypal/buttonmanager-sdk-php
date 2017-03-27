@@ -7,7 +7,7 @@
 //
 require_once 'Configuration.php';
 /*
- * @constant PP_CONFIG_PATH required if credentoal and configuration is to be used from a file
+ * @constant PP_CONFIG_PATH required if credential and configuration is to be used from a file
 * Let the SDK know where the sdk_config.ini file resides.
 */
 //define('PP_CONFIG_PATH', dirname(__FILE__));
@@ -15,9 +15,4 @@ require_once 'Configuration.php';
 /*
  * use autoloader
 */
-if(file_exists( dirname(__FILE__). '/vendor/autoload.php')) {
 require 'vendor/autoload.php';
-} else {
-require 'PPAutoloader.php';
-    PPAutoloader::register();
-}

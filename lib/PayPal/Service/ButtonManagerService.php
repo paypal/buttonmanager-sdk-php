@@ -29,7 +29,7 @@ class ButtonManagerService extends PPBaseService {
 	protected static $SDK_NAME = "buttonmanager-php-sdk";
 
 	// SDK Version
-	protected static $SDK_VERSION = "3.9.0";
+	protected static $SDK_VERSION = "4.0.0";
 
     /**
     * @param $config - Dynamic config map. This takes the higher precedence if config file is also present.
