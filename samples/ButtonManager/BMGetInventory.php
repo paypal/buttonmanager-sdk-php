@@ -1,7 +1,7 @@
 <?php
 use PayPal\PayPalAPI\BMGetInventoryReq;
 use PayPal\PayPalAPI\BMGetInventoryRequestType;
-use PayPal\Service\PayPalAPIInterfaceServiceService;
+use PayPal\Service\ButtonManagerService;
 require_once('../PPBootStrap.php');
 
 /*
@@ -17,7 +17,7 @@ $bmGetInventoryReq->BMGetInventoryRequest = $bmGetInventoryReqest;
 /*
 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+$paypalService = new ButtonManagerService(Configuration::getAcctAndConfig());
 try {
 	$bmGetInventoryResponse = $paypalService->BMGetInventory($bmGetInventoryReq);
 } catch (Exception $ex) {
