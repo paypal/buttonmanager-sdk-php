@@ -49,7 +49,7 @@ For example,
     
     use PayPal\PayPalAPI\BMButtonSearchReq;
     use PayPal\PayPalAPI\BMButtonSearchRequestType;
-    use PayPal\PayPalAPI\ButtonManagerService;
+    use PayPal\Service\ButtonManagerService;
     
     // Array containing credentials and confiuration parameters. (not required if config file is used)
     $config = array(
@@ -67,7 +67,7 @@ For example,
     $buttonManagerService = new ButtonManagerService($config);
     $buttonSearchResponse = $buttonManagerService->BMButtonSearch($buttonSearchReq);
     
-    if($strtoupper($buttonSearchResponse->Ack) == 'SUCCESS') {
+    if(strtoupper($buttonSearchResponse->Ack) == 'SUCCESS') {
         // Success
     }
 ```
