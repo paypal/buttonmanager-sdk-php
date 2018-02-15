@@ -6,6 +6,10 @@ We have made a change to 4.x to make it compatible with other PayPal Classic SDK
 
 - Change references from `\PayPal\Service\PayPalAPIInterfaceServiceService` to `\PayPal\Service\ButtonManagerService`.
 
+## Support
+
+> Please contact [PayPal Technical Support](https://developer.paypal.com/support/) for any live or account issues.
+
 ## Prerequisites
 
 PayPal's PHP ButtonManager SDK requires:
